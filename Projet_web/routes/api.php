@@ -30,7 +30,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/user/get-product', [FrontendController::class, 'GetTableaux']);
-Route::get('/user/detail-product/{category}/{id}', [FrontendController::class, 'DetailTableaux']);
+Route::get('/user/detail-product/{id}', [FrontendController::class, 'DetailTableaux']);
 
 
 Route::middleware('auth:sanctum')->group(function() {

@@ -20,20 +20,15 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function DetailTableaux($category, $id) {
+    public function DetailTableaux($id) {
 
-        $category = Category::where('Name_category',$category)->first();
-
-        if($category) {
-
-            $product = Product::where("categorie_id", $category->id)->where("id",'=', $id)->first();
+            $product = Product::with('Categorie')->where("id",'=', $id)->first();
 
             if($product) {
 
                 return response()->json([
                     'status' => 200,
                     'produit' => $product,
-                    'categorie' => $category
                     ]);
 
             } else {
@@ -43,12 +38,6 @@ class FrontendController extends Controller
                     'error' => "Aucun tableau associe a cette categorie"
                     ]);
             }
-        } else {
-            return response()->json([
-                'status' => 420,
-                'categorie' => $category,
-                'error' => "Cette categorie n'existe pas"
-            ]);
-        }
+
     }
 }
