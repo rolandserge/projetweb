@@ -3,7 +3,6 @@
      padding: 0;
      box-sizing: border-box;
 }
-
 .Navbar {
      display: flex;
      justify-content: space-around;
@@ -24,8 +23,9 @@
 .element {
      display: flex;
      justify-content: space-around;
-     width: 50%;
+     width: 60%;
      align-items: center ;
+     /* background: red; */
 }
 .element span {
      background: #F9B233;
@@ -39,5 +39,38 @@
 span {
      color: red;
 }
+.photo_user_div {
+     /* background: orange; */
+     width: 6%;
+     /* position: relative; */
+     height: 10%;
+}
+.user_image {
+     width: 100%;
+     cursor: pointer;
+     /* height: 15vh; */
+}
+.user_image img {
 
-/* Page home  */
+     width: 100%;
+}
+.user_image_element {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     background: blue;
+     width: 15%;
+     position: absolute;
+}
+.user_image_element.active {
+     opacity: 1;
+     visibility: visible;
+     transform: translateY(0);
+     transition: 10s ease;
+}
+.user_image_element.inactive {
+     opacity: 0;
+     visibility: hidden;
+     transform: translateY(-20px);
+     transition: 10s ease;
+}

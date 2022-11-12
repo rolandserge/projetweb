@@ -4,11 +4,12 @@ import card from "../../Images/card.png"
 import '../../Styles/User/Header.css'
 import User from '../../Images/user.png'
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 const Navbar = () => {
 
      const {cards} = useSelector(item => item.panier)
-
+     const [open, setOpen] = useState(false)
      return (
           <div className='Navbar'>
                <div className='logo'>
@@ -32,20 +33,23 @@ const Navbar = () => {
                          <img src={card} alt="panier" width={40} />
                          <Link className='item' to="/panier"><span>{cards.length}</span></Link>
                     </div>
-                    <div>
-                         <div className='user_image'>
+                    <div className='photo_user_div'>
+                         <div className='user_image' onClick={() => setOpen(!open)}>
                               <img src={User} alt="" />
                          </div>
-                         <div>
-                           
-                                   <Link to="" className=''>Mon profil</Link>
-                                   <Link to="" className=''>Tableaux</Link>
-                                   <Link to="" className=''>Editer profiel</Link>
-                                   <Link to="" className=''>Message</Link>
-                                   <Link to="" className=''>Parametre</Link>
-                                   <Link to="" className=''>Deconnexion</Link>
-                           
-                         </div>
+                         {
+                              open && 
+                                   <div className={`user_image_element ${open ? 'active' : 'inactive'}`}>
+                                   
+                                             <Link to="" className=''>Mon profil</Link>
+                                             <Link to="" className=''>Tableaux</Link>
+                                             <Link to="" className=''>Editer profiel</Link>
+                                             <Link to="" className=''>Message</Link>
+                                             <Link to="" className=''>Parametre</Link>
+                                             <Link to="" className=''>Deconnexion</Link>
+                                   
+                                   </div>
+                         }
                     </div>
                </div>
                <div className='test'>
