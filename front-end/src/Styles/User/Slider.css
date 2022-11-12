@@ -1,0 +1,64 @@
+/* *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+.container {
+     background: #F6F6F6;
+     height: 50vh;
+}
+.containerblue {
+     height: 50vh;
+     background: #009FE3;
+}
+.slide {
+     width: 70%;
+     height: 25vh;
+     /* text-align: center; */
+     /* overflow: hidden; */
+     /* margin: 2rem; */
+     /* background: blue; */
+     /* background: white; */
+     /* color: white; */
+/* } 
+
+.slide img {
+     height: 100%;
+     width: 100%;
+}
+ */ 
+.contenaire {
+     background: white;
+     /* position: absolute; */
+     height: 40vh;
+}
+.card_swipper {
+     height: 47vh;
+     width: 100%;
+     background: white;
+     padding: 0.4em;
+     /* position: absolute; */
+}
+.card_swipper .image {
+     height: 35vh;
+     width: 100%;
+}
+.card_swipper .image img {
+     height: 100%;
+     width: 100%;
+}
+.card_swipper .infos {
+     height: 22%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: column;
+}
+.card_swipper .infos .nom {
+     text-decoration: none;
+     color: black;
+}
+.card_swipper .infos .prix {
+     text-decoration: none;
+     color: #F9B233;
+}

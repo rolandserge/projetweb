@@ -1,0 +1,65 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+.fonds {
+     background: #1D71B8;
+     height: 87vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.fonds .formulaires {
+     background: white;
+     width: 40%;
+     height: 60vh;
+     border-radius: 5px;
+     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.fonds .formulaire form {
+     /* background: red; */
+     /* width: 60%; */
+     display: flex;
+     margin-top: 1rem;
+     justify-content: space-around;
+     flex-direction: column;
+     align-items: center;
+     height: 40vh;
+}
+.fonds .formulaire form input {
+     height: 7vh;
+     width: 80%;
+     padding: 0 0 0 1rem;
+     border: 1px solid #1D71B8;
+     outline-color: #F9B233;
+     border-radius: 3px;
+     background: #F6F6F6;
+}
+.fonds .formulaire form button {
+     width: 80%;
+     border: none;
+     border-radius: 3px;
+     font-size: 1.2rem;
+     background: #1D71B8;
+     color: white;
+     height: 6vh;
+     transition: 2s;
+}
+.fonds .formulaire form button:hover {
+     opacity: 0.5;
+     transition: 2s;
+     /* color: #1D71B8; */
+     border: 1px solid #1D71B8;
+}
+h2 {
+     margin: 1.5rem 0 0 3.4rem;
+}
+.loginbtn {
+     text-decoration: none;
+     color: #F9B233;
+     font-size: 1.3rem;
+     float: right;
+     /* background: red; */
+     margin: 0.5rem 2.2rem 0 0;
+}

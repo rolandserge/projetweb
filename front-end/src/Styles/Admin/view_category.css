@@ -1,0 +1,127 @@
+.category_div {
+     background: white;
+     padding: 1.2em;
+     margin: 2em 2em 2em 0;
+}
+.category_div .cat_titre {
+     text-transform: uppercase;
+     font-weight: 500;
+     font-size: 1.2em;
+     /* background: red; */
+}
+.category_div .category_element {
+     display: flex;
+     justify-content: space-between;
+     height: 15vh;
+     align-items: center;
+}
+.category_div .category_element .category_nb {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     width: 12%;
+}
+.category_div .category_element .category_nb select {
+     width: 45%;
+     height: 4vh;
+     outline-color: blue;
+     border-radius: 3px;
+     cursor: pointer;
+}
+.category_div .category_element .category_search {
+     width: 50%;
+     display: flex;
+     align-items: center;
+}
+.category_div .category_element .category_search input {
+     height: 5vh;
+     border-radius: 3px 0 0 3px;
+     border: 2px solid #f6f6f6;
+     width: 75%;
+     padding-left: 0.8em;
+     outline-color: black;
+}
+.category_div .category_element .category_search button {
+     width: 25%;
+     height: 5vh;
+     border: none;
+     font-size: 1.1em;
+     color: white;
+     cursor: pointer;
+     border-radius: 0 3px 3px 0;
+     background: black;
+}
+.category_div .category_element .add_new {
+     height: 6vh;
+     background: orange;
+     width: 15%;
+     display: flex;
+     border-radius: 3px;
+     align-items: center;
+     justify-content: center;
+}
+.category_div .category_element .add_lien {
+     text-decoration: none;
+     color: white;
+}
+table
+{
+    border-collapse: collapse;
+    width: 100%;
+    /* Les bordures du tableau seront collées (plus joli) */
+} 
+.table th {
+     height: 9vh;
+}
+.table td 
+{
+    border-bottom: 2px solid #f6f6f6;
+    height: 8vh;
+    text-align: center;
+    text-align: center;
+}
+table .id_category {
+     width: 12%;
+}
+table .nom_category {
+     width: 20%;
+     
+}
+table .nom_cat {
+     text-align: left;
+     padding-left: 2em; 
+}
+table .status_cat {
+     width: 20%;
+}
+table .action_button {
+     width: 22%;
+}
+.table thead {
+     background: blue;
+     color: white;
+}
+.table .tbody td .modifier_btn {
+     width: 60%;
+     background: yellow;
+     height: 6vh;
+     margin-left: 1em;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 3px;
+}
+.table .tbody td .modifier_cat {
+     text-decoration: none;
+     color: black;
+     font-weight: 500;
+}
+.table .tbody td button {
+     border: none;
+     background: red;
+     color: white;
+     height: 6vh;
+     width: 70%;
+     cursor: pointer;
+     border-radius: 3px;
+}

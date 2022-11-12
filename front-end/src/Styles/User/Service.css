@@ -1,0 +1,43 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+.services {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+}
+.services .service {
+     margin: 2rem 0;
+     width: 16%;
+     height: 30vh;
+     /* margin: 2rem 0.5rem; */
+     /* background: burlywood; */
+}
+.services .service .photo {
+     /* background: orange; */
+     height: 15vh;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+}
+.service .photo img {
+     width: 30%;
+     height: 100%;
+     object-fit: contain;
+}
+.services .service .info {
+     /* background: red; */
+     width: 100%;
+     text-align: center;
+     height: 15vh;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     width: 100%;
+
+}
+.services .service .info p {
+     font-size: 1.3rem;
+}
