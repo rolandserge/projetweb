@@ -11,6 +11,22 @@ import Service from '../../Component/Users/Service';
 import Footer from '../../Component/Users/Footer';
 
 const Home = () => {
+
+     var value = ""
+
+     if(localStorage.getItem('auth_token')) {
+          
+          value = <div>
+               bienvenu a vous !
+          </div>
+
+    } else {
+
+          value = <div>
+              <Link to="/login" className='login'>Login</Link>
+              <Link to="/register" className='register'>Register</Link>
+         </div>
+    }
      
      return (
           <div>
@@ -26,10 +42,9 @@ const Home = () => {
                                    <p>Des toiles d’artiste disponibles à la vente directe ou sur commande</p>
                               </div>
                               <div className='authentification'>
-                                   <div>
-                                        <Link to="/login" className='login'>Login</Link>
-                                        <Link to="/register" className='register'>Register</Link>
-                                   </div>
+                                   {
+                                        value
+                                   }
                               </div> 
                               </div>
                          </div>            

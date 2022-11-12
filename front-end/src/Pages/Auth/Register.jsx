@@ -13,14 +13,16 @@ const Register = () => {
 
      const [errors, setErros] = useState([])
      const navigate = useNavigate();
-     const [token, setToken] = useState(localStorage.getItem("auth_token"))
+     // const [token, setToken] = useState()
      useEffect(() => {
-          
+
+          let token = localStorage.getItem("auth_token")
+
           if(token) {
 
                navigate("/")
           }
-     }, [token, navigate])
+     }, [])
 
      const register = async (e) => {
 
