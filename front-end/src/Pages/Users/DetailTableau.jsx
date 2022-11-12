@@ -133,7 +133,7 @@ const DetailTableau = () => {
                               </thead>
                               <tbody>
                                    <tr>
-                                        <td>Artiste du tableau</td>
+                                        <td>Nom de l'artiste</td>
                                         <td>{isloading ? '' : tableau.Name_Artiste}</td>
                                    </tr>
                                    <tr>
@@ -141,7 +141,7 @@ const DetailTableau = () => {
                                         <td>{isloading ? '' : tableau.Largeur_Tableau} <span>cm</span></td>
                                    </tr>
                                     <tr>
-                                        <td>Hauteur</td>
+                                        <td>Hauteur du tableau</td>
                                         <td>{isloading ? '' : tableau.Hauteur_Tableau} <span>cm</span></td>
                                    </tr>
                                    <tr>
@@ -149,7 +149,7 @@ const DetailTableau = () => {
                                         <td>{isloading ? '' : tableau.Couleur_Tableau}</td>
                                    </tr>
                                    <tr>
-                                        <td>Format</td>
+                                        <td>Format du tableau</td>
                                         <td>{isloading ? '' : tableau.Format_Tableau}</td>
                                    </tr>
                               </tbody>

@@ -105,7 +105,8 @@ ul li {
      display: flex;
      justify-content: center;
      align-items: center;
-     text-transform: capitalize;
+     margin-bottom: 1.5em;
+     /* text-transform: capitalize; */
 }
 .tables {
      border-collapse: collapse;
