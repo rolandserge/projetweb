@@ -25,8 +25,10 @@ axios.defaults.withCredentials = true
 
 axios.interceptors.request.use(function(config){
   const token = localStorage.getItem('auth_token')
+  const name = localStorage.getItem('auth_name')
   // const session = sessionStorage.getItem('auth_token')
   config.headers.Authorization = token ? `Bearer ${token}` : ''
+  config.headers.Authorization = name ? `Bearer ${name}` : ''
   return config
 })
 

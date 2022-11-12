@@ -74,7 +74,7 @@ const Panier = () => {
                                    <button onClick={() => dispatch(clearCard())}>Vider le panier</button>
                               </div>    
                               <div className="totaux">
-                                   <h2>TOTAL : {totalAmont} FCFA</h2>
+                                   <h3>TOTAL : {totalAmont} FCFA</h3>
                               </div>
                          </div> 
                     </div>

@@ -17,7 +17,7 @@ const Home = () => {
      if(localStorage.getItem('auth_token')) {
           
           value = <div>
-               bienvenu a vous !
+               <Link >Bonjour a vous</Link>
           </div>
 
     } else {

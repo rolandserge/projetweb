@@ -103,7 +103,7 @@ table .action_button {
 }
 .table .tbody td .modifier_btn {
      width: 60%;
-     background: yellow;
+     background: #f6f6f6;
      height: 6vh;
      margin-left: 1em;
      display: flex;
@@ -121,6 +121,7 @@ table .action_button {
      background: red;
      color: white;
      height: 6vh;
+     opacity: 0.5;
      width: 70%;
      cursor: pointer;
      border-radius: 3px;

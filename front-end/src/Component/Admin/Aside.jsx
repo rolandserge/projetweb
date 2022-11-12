@@ -10,6 +10,7 @@ const Aside = () => {
      const [open2, setOpen2] = useState(false)
 
      return (
+          <div className='aside_container'>
           <div className='aside'>
                <div>
                     <Link to="/admin/index" className="lien">Dashbord</Link>
@@ -18,7 +19,7 @@ const Aside = () => {
                     <Link to="#" className="lien">Commandes</Link> 
               </div>
               <div>
-               <div onClick={(e) => setOpen(!open)} className='click'>Categorie <span>v</span></div>
+               <div onClick={(e) => setOpen(!open)} className='click'> <div>Categorie</div><span>v</span></div>
                     {
                          open && (
                               <div className='content-item'>
@@ -56,6 +57,7 @@ const Aside = () => {
               <div>
                     <Link to="#" className="lien">Parametre</Link>
               </div>
+          </div>
           </div>
      );
 };
