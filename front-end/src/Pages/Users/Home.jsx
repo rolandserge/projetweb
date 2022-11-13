@@ -5,12 +5,13 @@ import Navbar from '../../Component/Users/Navbar';
 import "../../Styles/User/Hom.css"
 // import Sliders from '../Component/Sliders';
 // import Sliders from '../../Component/Slide';
-import Card from '../../Component/Users/Card';
 // import Promotion from '../../Component/Users/Promotion';
 import Service from '../../Component/Users/Service';
 import Footer from '../../Component/Users/Footer';
+import Tableaux from '../../Component/Users/Tableaux';
 
 const Home = () => {
+
 
      var value = ""
 
@@ -62,7 +63,7 @@ const Home = () => {
                
                          {/* <Sliders /> */}
                     {/* </div> */}
-                    <Card />
+                    <Tableaux />
                     {/* <Promotion /> */}
                     <Service />
                </main> 
