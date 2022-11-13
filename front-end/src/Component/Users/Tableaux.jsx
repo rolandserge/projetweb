@@ -8,7 +8,9 @@ const Tableaux = () => {
      const [tableaux, setTableaux] = useState([])
 
      useEffect(() => {
-          (async function () {
+
+          const Tableaux = async() => {
+
                try {
                    const response = await axios.get("/api/user/get-product");
                  
@@ -17,9 +19,12 @@ const Tableaux = () => {
                          setTableaux(response.data.tableaux)
                     }
                } catch (error) {
+
                    console.log(error);
                }
-           })();
+          }
+               
+        Tableaux()
      }, [])
      
      return (

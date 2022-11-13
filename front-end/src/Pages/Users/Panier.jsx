@@ -57,10 +57,10 @@ const Panier = () => {
                                         <button className='action' onClick={() => dispatch(increment(card))}>+</button>
                                    </div>
                                    <div className="prix_unit">
-                                        <p>{card.Prix_Tableau} FCFA</p>
+                                        <p>{card.Prix_Tableau.toLocaleString()} FCFA</p>
                                    </div>
                                    <div className="total">
-                                        <p>{card.Prix_Tableau * card.quantite} FCFA</p>
+                                        <p>{(card.Prix_Tableau * card.quantite).toLocaleString()} FCFA</p>
                                    </div>
                               </div>
                               )
@@ -74,7 +74,7 @@ const Panier = () => {
                                    <button onClick={() => dispatch(clearCard())}>Vider le panier</button>
                               </div>    
                               <div className="totaux">
-                                   <h3>TOTAL : {totalAmont} FCFA</h3>
+                                   <h3>TOTAL : {totalAmont.toLocaleString()} FCFA</h3>
                               </div>
                          </div> 
                     </div>

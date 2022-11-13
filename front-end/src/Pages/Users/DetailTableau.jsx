@@ -95,7 +95,7 @@ const DetailTableau = () => {
                                         </p>
                                    </div>
                                    <div>
-                                        <p className='prix_tableau_p'>{isloading ? '' : tableau.Prix_Tableau} <span>FCFA</span></p>
+                                        <p className='prix_tableau_p'>{isloading ? '' : tableau.Prix_Tableau.toLocaleString()} <span>FCFA</span></p>
                                         
                                          {/* {isloading ? '' : tableau.Prix_Tableau} */}
                                    </div>

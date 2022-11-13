@@ -10,7 +10,7 @@ const Card = ({ table }) => {
                </div>
                <div className="infos">
                     <Link to={`/detail-tableau/${table.id}`} className='nom'><p>{table.Name_Tableau}</p></Link>
-                    <Link to={`/detail-tableau/${table.id}`} className='prix'>{table.Prix_Tableau} FCFA</Link>
+                    <Link to={`/detail-tableau/${table.id}`} className='prix'>{table.Prix_Tableau.toLocaleString()} FCFA</Link>
                </div>
           </div>                  
      );
