@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Component/Users/Navbar';
 import "../../Styles/User/Panier.css"
-import Toile from "../../Images/toile.jpg"
+// import Toile from "../../Images/toile.jpg"
 import Supprimer from "../../Images/supprimer.png"
 import Vider from "../../Images/vider.png"
 import Footer from '../../Component/Users/Footer';

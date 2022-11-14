@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import swal from "sweetalert";
+import swal from "sweetalert"
+// import swal from '@sweetalert/with-react';
 
 const initialState = {
      cards : localStorage.getItem("paniers") ? JSON.parse(localStorage.getItem("paniers")) : [],
@@ -56,9 +57,27 @@ const SystemPanier = createSlice({
           },
           remove : (state, action) => {
 
-               state.cards = state.cards.filter((item) => item.id !== action.payload.id )
-               localStorage.setItem("paniers", JSON.stringify(state.cards))
-               swal('danger','Ce produit ete supprimer avec sucess')
+               swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                  })
+                  .then((willDelete) => {
+                    if (willDelete) {
+
+                         state.cards = state.cards.filter((item) => item.id !== action.payload.id )
+                         localStorage.setItem("paniers", JSON.stringify(state.cards))
+                         swal("Poof! Your imaginary file has been deleted!", {
+                           icon: "success",
+                         });
+                    //   swal('danger','Ce produit ete supprimer avec sucess')
+                    } else {
+                      swal("Your imaginary file is safe!");
+                    }
+                  })
+              
           },
           clearCard : (state) => {
                state.cards = []

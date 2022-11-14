@@ -5,8 +5,9 @@ import { AddCard } from '../../Redux/SystemPanier';
 import Navbar from '../../Component/Users/Navbar';
 import Add from "../../Images/add.png"
 import "../../Styles/User/DetailTableau.css"
-import swal from "sweetalert"
 import axios from "axios"
+import swal from "sweetalert"
+// import swal from '@sweetalert/with-react';
 import { useDispatch } from 'react-redux';
 
 const DetailTableau = () => {
@@ -31,6 +32,7 @@ const DetailTableau = () => {
           } else {
                
                navigate("/login")
+               
           }
      }
 
@@ -55,6 +57,7 @@ const DetailTableau = () => {
           
                                swal("Error", data.error)
                                navigate("/")
+                              
                           }
                      } catch (error) {
           
@@ -64,6 +67,7 @@ const DetailTableau = () => {
                 }
           
           fetchcategorie()
+
      }, [id, navigate])
      return (
           <>
