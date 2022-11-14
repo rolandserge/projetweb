@@ -26,6 +26,7 @@ const DetailTableau = () => {
 
                dispatch(AddCard(produit))
                navigate("/panier")
+               
 
           } else {
                
