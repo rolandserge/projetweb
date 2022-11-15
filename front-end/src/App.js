@@ -12,6 +12,7 @@ import Bord from './Component/Admin/Bord';
 import ViewCategory from './Component/Admin/Category/ViewCategory';
 import ViewProduct from './Component/Admin/Product/ViewProduct';
 import Card from './Component/Users/Card';
+import PrivateRoute from './Routes/PrivateRoute';
 
 
 axios.defaults.headers = {
@@ -25,10 +26,10 @@ axios.defaults.withCredentials = true
 
 axios.interceptors.request.use(function(config){
   const token = localStorage.getItem('auth_token')
-  const name = localStorage.getItem('auth_name')
+  // const name = localStorage.getItem('auth_name')
   // const session = sessionStorage.getItem('auth_token')
   config.headers.Authorization = token ? `Bearer ${token}` : ''
-  config.headers.Authorization = name ? `Bearer ${name}` : ''
+  // config.headers.Authorization = name ? `Bearer ${name}` : ''
   return config
 })
 
@@ -38,21 +39,23 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/panier' element={<Panier />} />
-          <Route path='/cards' element={<Card />} />
+          <Route path="/*" element={<Home />} />
+          <Route path='/login/*' element={<Login />} />
+          <Route path='/register/*' element={<Register />} />
+          <Route path='/panier/*' element={<Panier />} />
+          <Route path='/cards/*' element={<Card />} />
           <Route path='/detail-tableau/:id' element={<DetailTableau />} />
 
-          <Route element={<Dashbord />}>
-            {/* <Route element={<ProtectedRoute />}> */}
-              <Route path='/admin/index' element={<Bord />} />
-              <Route path='/admin/product/add-product' element={<AddProduct />} />
-              <Route path='/admin/product/view-product' element={<ViewProduct />} />
-              <Route path='/admin/category/add-category' element={<AddCategory />} />
-              <Route path='/admin/category/view-category' element={<ViewCategory />} />
-            {/* </Route> */}
+          <Route element={<PrivateRoute />}>
+              <Route element={<Dashbord />}>
+                {/* <Route element={<ProtectedRoute />}> */}
+                  <Route path='/admin/index/*' element={<Bord />} />
+                  <Route path='/admin/product/add-product/*' element={<AddProduct />} />
+                  <Route path='/admin/product/view-product/*' element={<ViewProduct />} />
+                  <Route path='/admin/category/add-category/*' element={<AddCategory />} />
+                  <Route path='/admin/category/view-category/*' element={<ViewCategory />} />
+                {/* </Route> */}
+              </Route>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,13 +1,15 @@
-.aside_container {
-     background: white;
+/* .aside_container {
+     background: blue;
      height: 100vh;
-}
+     color: white;
+} */
 .aside {
-     background: white;
+     background: blue;
      display: flex;
      justify-content: space-around;
      flex-direction: column;
      padding: 0 2em 0 2rem;
+     color: white;
      /* height: 80vh; */
      box-shadow: rgba(0.05, 0, 0, 0) 0px 0px 0px 1px;
      line-height: 3.5;
@@ -16,7 +18,7 @@
 }
 
 .content-item {
-     background: #F6F6F6;
+     /* background: #F6F6F6; */
      display: flex;
      flex-wrap: wrap;
      width: 100%;
@@ -26,7 +28,7 @@
 }
 .lien {
      text-decoration: none;
-     color: black;
+     color: white;
     
 }
 .click {

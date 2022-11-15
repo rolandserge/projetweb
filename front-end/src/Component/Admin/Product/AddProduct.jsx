@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import "../../../Styles/Admin/Add_product.css"
 import { useState } from 'react';
-import swal from "sweetalert";
+// import swal from "sweetalert";
 import {Link, useNavigate} from "react-router-dom"
 import axios from "axios"
 
@@ -15,29 +15,29 @@ const AddProduct = () => {
 
           if(!token) {
 
-               swal("Veillez vous connecter")
+               // swal("Veillez vous connecter")
                navigate("/login")
           } 
      }, [navigate])
 
      const [category, setCategory] = useState([])
 
-     // const [image, setImage] = useState("")
+     const [image, setImage] = useState("")
      const [error, setError] = useState([])
 
-     // const addimage = (e) => {
+     const addimage = (e) => {
 
-     //      const reader = new FileReader()
+          const reader = new FileReader()
 
-     //      if(e.target.files[0]) {
+          if(e.target.files[0]) {
 
-     //           reader.readAsDataURL(e.target.files[0])
-     //      }
-     //      reader.onload = (event) => {
+               reader.readAsDataURL(e.target.files[0])
+          }
+          reader.onload = (event) => {
 
-     //           setImage(event.target.result)
-     //      }
-     // }
+               setImage(event.target.result)
+          }
+     }
      
      const nameRef = useRef()
      const artisteRef = useRef()
@@ -65,7 +65,7 @@ const AddProduct = () => {
 
                     } else if (response.data.status === 404) {
                          
-                         swal("Error",response.data.message)
+                         // swal("Error",response.data.message)
                     }
                } catch (error) {
                     console.log(error);
@@ -113,13 +113,13 @@ const AddProduct = () => {
                // console.log(response.data)
                if(response.data.status === 200) {
 
-                    swal("Success",response.data.message)
+                    // swal("Success",response.data.message)
                     document.getElementById('form').reset();
                     setError([])
 
                } else if(response.data.status === 422) {
 
-                    swal("Error",response.data.message)
+                    // swal("Error",response.data.message)
                
                     setError(response.data.error)
                }
@@ -203,7 +203,7 @@ const AddProduct = () => {
                                    </div>
                                    <div>
                                         <label htmlFor="">Choisissez l'image</label>
-                                        <input type="file" accept="image/*" name='Image_Tableau'ref={imageRef} />
+                                        <input type="file" accept="image/*"onChange={addimage} name='Image_Tableau'ref={imageRef} />
                                         {
                                              error.Image_Tableau ? <span>{error.Image_Tableau}</span> : ""
                                         }
@@ -222,6 +222,13 @@ const AddProduct = () => {
                                              error.Couleur_Tableau ? <span>{error.Couleur_Tableau}</span> : ""
                                         }
                                    </div>
+                                   {/* <div>
+                                        <label htmlFor="">Entrer la quantite</label>
+                                        <input type="text" ref={couleurRef} placeholder='Entrer la quantité' />
+                                        {
+                                             error.Couleur_Tableau ? <span>{error.Couleur_Tableau}</span> : ""
+                                        }
+                                   </div> */}
                               </div>
                               <div className='long_texte'>
                                    <label htmlFor="">Entrer la description</label>
@@ -232,15 +239,15 @@ const AddProduct = () => {
                               </div>
                          </div>
                          <div className="form_image">
-                             {/* {
+                             {
                                   image ?  <div className="image1">
                                              <img src={image} alt=""/>
                                         </div> : "Image pas encore choisi"
-                             } */}
-                               
-                                  <div className="image1">
+                             }
+                                
+                                  {/* <div className="image1">
                                              
-                                   </div>
+                                   </div> */}
                           
                               <div className='btn_add'>
                                    <div className="annuler">

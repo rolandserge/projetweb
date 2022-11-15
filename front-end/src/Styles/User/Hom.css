@@ -75,21 +75,21 @@ h1 {
 }
 .searchbar .search input {
      height: 7vh;
-     width: 80%;
-     border-radius: 5px 0 0 5px;
+     width: 90%;
+     /* border-radius: 5px 0 0 5px; */
      outline-color: #1D71B8;
      padding: 0 0 0 1rem;
      background: #F6F6F6;
      border: 1px solid #1D71B8;
 }
-.searchbar .search button {
+/* .searchbar .search button {
      background: #1D71B8;
      border: none;
      border-radius: 0 5px 5px 0;
      color: white;
      height: 7vh;
      width: 20%;
-}
+} */
 
 /* .slider_container {
      /* background: white; */

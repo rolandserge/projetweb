@@ -18,7 +18,7 @@ const Home = () => {
      if(localStorage.getItem('auth_token')) {
           
           value = <div>
-               <Link >Bonjour a vous</Link>
+               <Link >Deconnexion</Link>
           </div>
 
     } else {
@@ -50,12 +50,7 @@ const Home = () => {
                               </div>
                          </div>            
                     </div>
-                    <div className='searchbar'>
-                         <div className='search'>
-                              <input type="search" placeholder='Rechercher des tableaux' name="search" />
-                              <button>Search</button>
-                         </div>
-                    </div>
+                    
                     {/* <div className='slider_container'> */}
 
                

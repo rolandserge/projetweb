@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef } from 'react';
 import "../../../Styles/Admin/Add_Category.css"
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 import axios from "axios"
 import { useState } from 'react';
 
@@ -30,19 +30,19 @@ const AddCategory = () => {
                     
                     if(response.data.status === 200) {
      
-                         swal("Success",response.data.message)
+                         // swal("Success",response.data.message)
                          document.getElementById('form').reset();
                          // navigate("/admin/view-product");
                             
                     } else if (response.data.status === 422) {
      
-                         swal('Error', response.data.message)
+                         // swal('Error', response.data.message)
                          setError(response.data.error)
                          
      
                     }  else if(response.data.status === 405) {
      
-                         swal("Error", response.data.message);
+                         // swal("Error", response.data.message);
                        }
           } catch (error) {
      

@@ -6,7 +6,7 @@ import Navbar from '../../Component/Users/Navbar';
 import Add from "../../Images/add.png"
 import "../../Styles/User/DetailTableau.css"
 import axios from "axios"
-import swal from "sweetalert"
+// import swal from "sweetalert"
 // import swal from '@sweetalert/with-react';
 import { useDispatch } from 'react-redux';
 
@@ -50,12 +50,12 @@ const DetailTableau = () => {
           
                           } else if(data.status === 400) {
           
-                               swal("Error", data.error)
+                              //  swal("Error", data.error)
                                navigate("/")
           
                           } else if(data.status === 420) {
           
-                               swal("Error", data.error)
+                              //  swal("Error", data.error)
                                navigate("/")
                               
                           }

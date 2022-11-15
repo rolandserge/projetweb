@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import "../../../Styles/Admin/ViewProduct.css"
 import { useEffect } from 'react';
 import axios from "axios";
-import swal from "sweetalert"
+// import swal from "sweetalert"
 
 const ViewProduct = () => {
 

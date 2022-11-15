@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import swal from "sweetalert"
+// import swal from "sweetalert"
 // import swal from '@sweetalert/with-react';
 
 const initialState = {
@@ -19,12 +19,12 @@ const SystemPanier = createSlice({
                if(find >= 0) {
 
                     state.cards[find].quantite += 0
-                    swal("Notification", "Ce produit est deja enregister dans votre panier")
+                    // swal("Notification", "Ce produit est deja enregister dans votre panier")
 
                } else {
                     const temp = {...action.payload, quantite: 1}
                     state.cards.push(temp)
-                    swal('Succes', "produit ajouté au panier avec succes")
+                    // swal('Succes', "produit ajouté au panier avec succes")
 
                }
                localStorage.setItem("paniers", JSON.stringify(state.cards))
@@ -51,32 +51,32 @@ const SystemPanier = createSlice({
                else if(state.cards[index].quantite === 1) {
                     
                     state.cards = state.cards.filter((item) => item.id !== action.payload.id )
-                    swal('danger','Ce produit ete supprimer avec sucess')
+                    // swal('danger','Ce produit ete supprimer avec sucess')
                }
                localStorage.setItem("paniers", JSON.stringify(state.cards))
           },
           remove : (state, action) => {
 
-               swal({
-                    title: "Are you sure?",
-                    text: "Once deleted, you will not be able to recover this imaginary file!",
-                    icon: "warning",
-                    buttons: true,
-                    dangerMode: true,
-                  })
-                  .then((willDelete) => {
-                    if (willDelete) {
+               // swal({
+               //      title: "Are you sure?",
+               //      text: "Once deleted, you will not be able to recover this imaginary file!",
+               //      icon: "warning",
+               //      buttons: true,
+               //      dangerMode: true,
+               //    })
+               //    .then((willDelete) => {
+               //      if (willDelete) {
 
-                         state.cards = state.cards.filter((item) => item.id !== action.payload.id )
-                         localStorage.setItem("paniers", JSON.stringify(state.cards))
-                         swal("Poof! Your imaginary file has been deleted!", {
-                           icon: "success",
-                         });
-                    //   swal('danger','Ce produit ete supprimer avec sucess')
-                    } else {
-                      swal("Your imaginary file is safe!");
-                    }
-                  })
+               //           swal("Poof! Your imaginary file has been deleted!", {
+               //                icon: "success",
+               //           });
+               //           //   swal('danger','Ce produit ete supprimer avec sucess')
+               //      } else {
+               //           swal("Your imaginary file is safe!");
+               //      }
+               // })
+               state.cards = state.cards.filter((item) => item.id !== action.payload.id )
+               localStorage.setItem("paniers", JSON.stringify(state.cards))
               
           },
           clearCard : (state) => {

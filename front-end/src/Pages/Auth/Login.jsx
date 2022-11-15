@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../Component/Users/Navbar';
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 import { useRef } from 'react';
 import axios from "axios"
 const Login = () => {
@@ -43,12 +43,12 @@ const Login = () => {
      
                     } else {
      
-                         navigate('/admin/acceuil')
+                         navigate('/admin/index')
                     }
                
                } else if(response.data.status === 401) {
                     
-                    swal("Error", response.data.message)
+                    // swal("Error", response.data.message)
                     
                } else if(response.data.status == 422){
                     
