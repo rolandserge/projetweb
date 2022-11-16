@@ -80,7 +80,7 @@ const Panier = () => {
                     </div>
                     <div className="continuer">
                          <Link to="/" className='continue'>Continuer vos achats</Link>
-                         <button>Finaliser votre commande</button>
+                         <Link to="/detail-payement" className='button'>Finaliser votre commande</Link>
                     </div>
                </div> : <div className='panier_vide'>
 
