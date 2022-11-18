@@ -20,22 +20,12 @@ const DetailTableau = () => {
      
      const [isloading, setIsloading] = useState(true)
 
-
      const addcard = (produit) => {
 
-          if(localStorage.getItem("auth_token")) {
-
                dispatch(AddCard(produit))
-               navigate("/panier")
-               
-
-          } else {
-               
-               navigate("/login")
-               
-          }
+               // navigate("/panier")
      }
-
+     
      useEffect(() => {
         
                const fetchcategorie = async() => { 
@@ -74,9 +64,7 @@ const DetailTableau = () => {
                <Navbar />
 
                <div className="detail_container">
-                    <div className='lien_div'>
-                         <Link to="/" className='lien'>Acceuil</Link> / <Link className='lien'>{ isloading ? '' : tableau.categorie.Name_category}</Link> <span>/</span> <Link className='lien'>{isloading ? '' : tableau.Name_Tableau}</Link>
-                    </div>
+     
                     <div className='containers_div'>
                          <div className='div_nom_cat'>
                               <p>{isloading ? '' : tableau.categorie.Name_category} {isloading ? '' : tableau.Couleur_Tableau} <span>:</span>  {isloading ? '' : tableau.categorie.Description_category}</p>
