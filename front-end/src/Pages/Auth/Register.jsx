@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../Component/Users/Navbar';
 // import swal from 'sweetalert';
@@ -13,17 +13,7 @@ const Register = () => {
 
      const [errors, setErros] = useState([])
      const navigate = useNavigate();
-     // const [token, setToken] = useState()
-     useEffect(() => {
-
-          let token = localStorage.getItem("auth_token")
-
-          if(token) {
-
-               navigate("/")
-          }
-     }, [])
-
+   
      const register = async (e) => {
 
           e.preventDefault()

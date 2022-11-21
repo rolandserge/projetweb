@@ -47,6 +47,7 @@ const AddProduct = () => {
      const couleurRef = useRef()
      const prixRef = useRef()
      const imageRef = useRef()
+     const quantiteRef = useRef()
      const largeurRef = useRef()
      const hauteurRef = useRef()
      const descriptionRef = useRef()
@@ -89,6 +90,7 @@ const AddProduct = () => {
           const hauteur = hauteurRef.current.value
           const couleur = couleurRef.current.value
           const format = formatRef.current.value
+          const quantite = quantiteRef.current.value
           const image = imageRef.current.files[0]
           const category = categoryRef.current.value
           const description = descriptionRef.current.value
@@ -101,6 +103,7 @@ const AddProduct = () => {
           formData.append("Hauteur_Tableau", hauteur)
           formData.append("Couleur_Tableau", couleur)
           formData.append("Format_Tableau", format)
+          formData.append("Quantite_Tableau", quantite)
           formData.append("Image_Tableau", image)
           formData.append("categorie_id", category)
           formData.append("Description_Tableau", description)
@@ -222,13 +225,13 @@ const AddProduct = () => {
                                              error.Couleur_Tableau ? <span>{error.Couleur_Tableau}</span> : ""
                                         }
                                    </div>
-                                   {/* <div>
+                                   <div>
                                         <label htmlFor="">Entrer la quantite</label>
-                                        <input type="text" ref={couleurRef} placeholder='Entrer la quantité' />
+                                        <input type="text" ref={quantiteRef} placeholder='Entrer la quantité' />
                                         {
                                              error.Couleur_Tableau ? <span>{error.Couleur_Tableau}</span> : ""
                                         }
-                                   </div> */}
+                                   </div>
                               </div>
                               <div className='long_texte'>
                                    <label htmlFor="">Entrer la description</label>

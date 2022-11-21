@@ -9,7 +9,9 @@
 .cards .card {
      height: 55vh;
      width: 24%;
-     background: white;
+     /* background: white;
+      */
+      background: #f6f6f6;
      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
      margin: 1.1rem 0 1rem 0;
      /* overflow: hidden; */

@@ -18,7 +18,7 @@ const ViewProduct = () => {
                try {
                    const response = await axios.get("/api/admin/get-product");
                  
-                    if(response.data.status == 200) {
+                    if(response.data.status === 200) {
 
                          setProduct(response.data.produit)
                     }

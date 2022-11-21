@@ -41,6 +41,7 @@ class ProductController extends Controller
             'Hauteur_Tableau' => 'required|numeric',
             'Image_Tableau' => 'required|image|mimes:jpg,jpeg',
             'Format_Tableau' => 'required|max:100',
+            'Quantite_Tableau' => 'required|numeric',
             'Couleur_Tableau' => 'required|max:100',
             'Description_Tableau' => 'required'
         ]);
@@ -77,6 +78,7 @@ class ProductController extends Controller
                 'Hauteur_Tableau' => $request->Hauteur_Tableau,
                 'Image_Tableau' => $image,
                 'Format_Tableau' => $request->Format_Tableau,
+                'Quantite_Tableau' => $request->Quantite_Tableau,
                 'Couleur_Tableau' => $request->Couleur_Tableau,
                 'Description_Tableau' => $request->Description_Tableau,
                 'categorie_id' => $request->categorie_id

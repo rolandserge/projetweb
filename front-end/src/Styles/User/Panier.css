@@ -1,18 +1,21 @@
+.body_panier {
+     background: white;
+}
 .containers {
      margin: 1em 6rem 2.5em 6em;
-     background: white;
-     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+     /* background: white; */
+     /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
 }
 .containers .titre {
-     /* background: wheat; */
      height: 10vh;
-     width: 30%;
+     width: 100%;
      text-align: center;
      /* margin-top: 3rem; */
 }
-.containers .titre h2 {
+.containers .titre p {
      /* margin-top: 2rem; */
      padding-top: 1.2rem;
+     font-size: 1.5em;
 }
 .paniers {
      display: flex;
@@ -26,7 +29,7 @@
      align-items: center;
      width: 95%;
      height: 17vh;
-     border-bottom: 1px solid;
+     /* border-bottom: 1px solid; */
 }
 .paniers .contents .imge {
      width: 10%;

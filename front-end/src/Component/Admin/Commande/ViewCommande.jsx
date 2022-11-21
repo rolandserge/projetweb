@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import "../../../Styles/Admin/view_category.css"
-import axios from "axios"
+import React from 'react';
+import Editer from "../../../Images/Admin/editer.png"
+import Voir from "../../../Images/Admin/voir.png"
 
-const ViewCategory = () => {
+const ViewCommande = () => {
 
-     const [categorie, setCategorie] = useState([])
+     const [commandes, setCommandes] = useState([])
 
      useEffect(() => {
           (async function () {
 
                try {
-                   const response = await axios.get("/api/admin/get-category");
+                   const response = await axios.get("/api/admin/get-commandes");
                  
                     if(response.data.status === 200) {
 
-                         setCategorie(response.data.categories)
+                         setCommandes(response.data.categories)
                     }
                } catch (error) {
+                    
                    console.log(error);
                }
            })();
@@ -26,11 +26,11 @@ const ViewCategory = () => {
      return (
           <div>
                <div>
-                    Menu / Category / view-category
+                    Menu / Commande / voir-commande
                </div>
                <div className="category_div">
                     <div className='cat_titre'>
-                         Liste des categories
+                         Liste commande
                     </div>
                     <div className="category_element">
                          <div className="category_nb">
@@ -54,29 +54,35 @@ const ViewCategory = () => {
                          <table className='table'>
                               <thead>
                                    <tr>
-                                        <th className='id_category'>Id categorie</th>
-                                        <th className='nom_category'>Nom de la categorie</th>
-                                        <th className='status_cat'>Status categorie</th>
+                                        <th className='id_category'>Id commande</th>
+                                        <th className='nom_category'>Lieu de livraison</th>
+                                        <th className='nom_category'>Date de la commande</th>
+                                        <th className='nom_category'>Date de livraison</th>
+                                        <th className='status_cat'>Status</th>
+                                        <th className='status_cat'>Total</th>
                                         <th colSpan="2" className='action_button'>Action</th>
                                    </tr>
                               </thead>
                               <tbody className='tbody'>
                                    {
-                                        categorie.map((category) => {
+                                        commandes.map((commande) => {
                                              
                                              return (
 
-                                                  <tr key={category.id}>
-                                                       <td>#1</td>
-                                                       <td className='nom_cat'>{category.Name_category}</td>
-                                                       <td>{category.Status_category}</td>
+                                                  <tr key={commande.id}>
+                                                       <td><span>#</span> {commande.id}</td>
+                                                       <td className='nom_cat'>{commande.lieu_livraison}</td>
+                                                       <td className='nom_cat'>{commande.created_at}</td>
+                                                       <td className='nom_cat'>{commande.date_livraison}</td>
+                                                       <td className='nom_cat'>{commande.total_commande}</td>
+                                                       <td>{commande.status}</td>
                                                        <td>
                                                             <div className="modifier_btn">
-                                                                 <Link to="" className='modifier_cat'>Modifier</Link>
+                                                                 <Link to="" className='modifier_cat'><img src={Voir} alt="" /></Link>
                                                             </div>
                                                        </td>
                                                        <td>
-                                                            <button>Supprimer</button>
+                                                            <button><img src={Editer} alt="" /></button>
                                                        </td>
                                                   </tr>
                                              )
@@ -90,4 +96,4 @@ const ViewCategory = () => {
      );
 };
 
-export default ViewCategory;
+export default ViewCommande;

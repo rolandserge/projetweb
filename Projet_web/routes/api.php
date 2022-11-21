@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\CommandeController;
 use App\Http\Controllers\API\FrontendController;
 
 /*
@@ -26,18 +27,14 @@ Route::middleware('guest')->group(function() {
     Route::post('/login', [AuthController::class, 'login']);
 });
 
-//Route publique pour user
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 
 Route::get('/user/get-product', [FrontendController::class, 'GetTableaux']);
 Route::get('/user/detail-product/{id}', [FrontendController::class, 'DetailTableaux']);
 
 
-// Route::middleware('auth:sanctum')->group(function() {
+Route::post('/user/commande', [CommandeController::class, 'placeorder']);
 
+// Route::middleware('auth:sanctum')->group(function() {
 // });
 
 // Routes proteges

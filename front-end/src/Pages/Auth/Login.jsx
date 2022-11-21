@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../Component/Users/Navbar';
 // import swal from 'sweetalert';
 import { useRef } from 'react';
 import axios from "axios"
+
 const Login = () => {
+
      const navigate = useNavigate();
      const emailRef = useRef()
      const passwordRef = useRef()
-
      const [errors, setErros] = useState([])
-     // const [error, setError] = useState()
-
-     useEffect(() => {
-          
-          if(localStorage.getItem("auth_token")) {
-
-               navigate("/")
-          }
-     }, [])
-     
 
      const login = async (e) => {
 

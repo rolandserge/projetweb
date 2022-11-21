@@ -28,6 +28,8 @@ const SystemPanier = createSlice({
 
                }
                localStorage.setItem("paniers", JSON.stringify(state.cards))
+               // localStorage.setItem("paniers", state.cards)
+
           },
           increment : (state, action) => {
 
@@ -37,6 +39,7 @@ const SystemPanier = createSlice({
                     state.cards[index].quantite += 1 
                }
                localStorage.setItem("paniers", JSON.stringify(state.cards))
+               // localStorage.setItem("paniers", state.cards)
                
           },
           decrement : (state, action) => {
@@ -54,6 +57,8 @@ const SystemPanier = createSlice({
                     // swal('danger','Ce produit ete supprimer avec sucess')
                }
                localStorage.setItem("paniers", JSON.stringify(state.cards))
+               // localStorage.setItem("paniers", state.cards)
+
           },
           remove : (state, action) => {
 
@@ -77,11 +82,14 @@ const SystemPanier = createSlice({
                // })
                state.cards = state.cards.filter((item) => item.id !== action.payload.id )
                localStorage.setItem("paniers", JSON.stringify(state.cards))
+               // localStorage.setItem("paniers", state.cards)
+               
               
           },
           clearCard : (state) => {
                state.cards = []
                localStorage.setItem("paniers", state.cards)
+               localStorage.removeItem("paniers")
           },
           getTotals : (state, action) => {
 

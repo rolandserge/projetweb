@@ -23,7 +23,9 @@ const Navbar = () => {
 
                     // sessionStorage.removeItem('auth_token')
                     // sessionStorage.removeItem('auth_name')
-                    localStorage.clear()
+                    localStorage.removeItem('auth_token')
+                    localStorage.removeItem('auth_name')
+                    // localStorage.clear()
 
                     navigate("/login")
                     // <Navigate to='/connexion' />
@@ -57,6 +59,9 @@ const Navbar = () => {
                     }
                </div>
           </>
+     } else {
+
+          auth = ""
      }
 
      return (

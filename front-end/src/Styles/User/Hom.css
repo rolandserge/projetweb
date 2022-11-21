@@ -1,3 +1,6 @@
+body {
+     background: white;
+}
 .images {
      background-image: url("../../Images/image.jpg");
      height: 60vh;

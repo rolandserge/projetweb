@@ -14,6 +14,9 @@ import ViewProduct from './Component/Admin/Product/ViewProduct';
 import Card from './Component/Users/Card';
 import PrivateRoute from './Routes/PrivateRoute';
 import Payement from './Pages/Users/Payement';
+import Finish from './Pages/Users/Finish';
+import ProtectedRoute from './Routes/ProtectedRoute';
+import PublicRoute from './Routes/PublicRoute';
 
 
 axios.defaults.headers = {
@@ -41,12 +44,18 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<Home />} />
-          <Route path='/login/*' element={<Login />} />
-          <Route path='/register/*' element={<Register />} />
           <Route path='/panier/*' element={<Panier />} />
           <Route path='/cards/*' element={<Card />} />
           <Route path='/detail-tableau/:id' element={<DetailTableau />} />
-          <Route path='/detail-payement/*' element={<Payement />} />
+          
+          <Route element={<PublicRoute />}>
+              <Route path='/login/*' element={<Login />} />
+              <Route path='/register/*' element={<Register />} />
+          </Route>
+          <Route element={<ProtectedRoute />} >
+              <Route path='/detail-payement/*' element={<Payement />} />
+              <Route path='/Finish/*' element={<Finish />} />
+          </Route>
 
           <Route element={<PrivateRoute />}>
               <Route element={<Dashbord />}>

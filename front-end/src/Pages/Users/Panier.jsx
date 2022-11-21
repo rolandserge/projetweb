@@ -22,16 +22,13 @@ const Panier = () => {
 
 
      return (
-          <div>
+          <div className='body_panier'>
               <Navbar />
-              <div className='home_div'>
-                    <Link>Acceuil</Link>/<Link>Panier</Link>
-              </div>
               {
                    cards.length >= 1 ? 
               <div className='containers'>
                     <div className='titre'>
-                         <h2>Mon panier</h2>
+                         <p>Recapitulatif de votre panier</p>
                     </div>
                     <div className="paniers">
                          {
