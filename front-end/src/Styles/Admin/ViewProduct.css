@@ -1,29 +1,34 @@
 table thead .id_product {
-     width: 8%;
+     width: 6%;
 }
 table thead .image_prod {
-     width: 10%;
+     width: 6%;
 }
 table thead .qtn_prod {
-     width: 5%;
+     width: 4%;
+}
+table thead .categorie_prod {
+     width: 9%;
 }
 table thead .prix_prod {
-     width: 11%;
+     width: 9%;
 }
 table thead .status_prod {
-     width: 10%;
+     width: 6%;
 }
 table tbody .image_div {
-     /* height: 8vh; */
      width: 100%;
+     height: 10vh;
      overflow: hidden;
      padding: 0.2em;
 }
 table tbody .image_div img {
      width: 100%;
-     width: 100%;
+     height: 100%;
+     /* overflow: cover; */
 }
 table tbody .nom_prod {
      padding-left: 0.5em;
      text-align: left;
+     width: 13%;
 }

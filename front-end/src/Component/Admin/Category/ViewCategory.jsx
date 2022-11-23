@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Editer from "../../../Images/Admin/editer.png"
+import Delete from "../../../Images/Admin/delete.png"
 import "../../../Styles/Admin/view_category.css"
 import axios from "axios"
+import Statistique from '../Dashbord/Statistique';
 
 const ViewCategory = () => {
 
@@ -26,8 +29,9 @@ const ViewCategory = () => {
      return (
           <div>
                <div>
-                    Menu / Category / view-category
+                    Dashbord / Category / view-category
                </div>
+               <Statistique />
                <div className="category_div">
                     <div className='cat_titre'>
                          Liste des categories
@@ -57,7 +61,7 @@ const ViewCategory = () => {
                                         <th className='id_category'>Id categorie</th>
                                         <th className='nom_category'>Nom de la categorie</th>
                                         <th className='status_cat'>Status categorie</th>
-                                        <th colSpan="2" className='action_button'>Action</th>
+                                        <th colSpan="2" className='action_commande'>Action</th>
                                    </tr>
                               </thead>
                               <tbody className='tbody'>
@@ -67,16 +71,16 @@ const ViewCategory = () => {
                                              return (
 
                                                   <tr key={category.id}>
-                                                       <td>#1</td>
+                                                       <td># {category.id}</td>
                                                        <td className='nom_cat'>{category.Name_category}</td>
                                                        <td>{category.Status_category}</td>
-                                                       <td>
-                                                            <div className="modifier_btn">
-                                                                 <Link to="" className='modifier_cat'>Modifier</Link>
+                                                       <td className='voir_action'>
+                                                            <div className="voir_btn">
+                                                                 <Link to="" className='lien_voir'><img src={Editer} alt="" /></Link>
                                                             </div>
                                                        </td>
-                                                       <td>
-                                                            <button>Supprimer</button>
+                                                       <td className='editer_action'>
+                                                            <button><img src={Delete} alt="" /></button>
                                                        </td>
                                                   </tr>
                                              )

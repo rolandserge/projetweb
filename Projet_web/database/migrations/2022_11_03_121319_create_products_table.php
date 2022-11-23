@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('Image_Tableau');
             $table->string('Format_Tableau');
             $table->string('Couleur_Tableau');
-            $table->integer('Quantite_Tableau')->default(1);
+            $table->integer('Quantite_Tableau')->nullable();
             $table->longText('Description_Tableau');
             $table->foreignId('categorie_id')->constrained()->onDelete('cascade');
             $table->timestamps();

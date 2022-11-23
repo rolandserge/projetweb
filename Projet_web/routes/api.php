@@ -66,6 +66,10 @@ Route::middleware('auth:sanctum','IsApiAdmin')->group(function () {
     Route::patch("/admin/update-product/{id}", [ProductController::class, "update"]);
     Route::delete("/admin/delete-product/{id}", [ProductController::class, "delete"]);
 
+    //Route de commande
+    Route::get("/admin/get-commandes", [CommandeController::class, "index"]);
+    Route::get("/admin/get-commandes/detail-commande/{id}", [CommandeController::class, "getproduit"]);
+
 });
 
 // Routes proteges

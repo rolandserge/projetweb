@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "../../../Styles/Admin/ViewProduct.css"
 import { useEffect } from 'react';
+import Editer from "../../../Images/Admin/editer.png"
+import Delete from "../../../Images/Admin/delete.png"
 import axios from "axios";
+import Statistique from '../Dashbord/Statistique';
 // import swal from "sweetalert"
 
 const ViewProduct = () => {
@@ -31,8 +34,9 @@ const ViewProduct = () => {
      return (
           <div>
                <div>
-                    Menu / Produits / view-produit
+                    Dashbord / Produits / view-produit
                </div>
+               <Statistique />
                <div className="category_div">
                     <div className='cat_titre'>
                          Liste des articles
@@ -62,11 +66,11 @@ const ViewProduct = () => {
                                         <th className='id_product'>Id</th>
                                         <th className='image_prod'>Image</th>
                                         <th className='nom_product'>Nom</th>
-                                        <th>Categorie</th>
+                                        <th className='categorie_prod'>Categorie</th>
                                         <th className='prix_prod'>Prix</th>
                                         <th className='qtn_prod'>Qte</th>
                                         <th className='status_prod'>Status</th>
-                                        <th colSpan="2" className='action_button'>Action</th>
+                                        <th colSpan="2" className='action_commande'>Action</th>
                                    </tr>
                               </thead>
                               <tbody className='tbody'>
@@ -87,17 +91,17 @@ const ViewProduct = () => {
                                                        {produit.categorie.Name_category}
                                                   </td>
                                                   <td>
-                                                       {produit.Prix_Tableau} FCFA
+                                                       {produit.Prix_Tableau.toLocaleString()} FCFA
                                                   </td>
                                                   <td>{produit.Quantite_Tableau}</td>
                                                   <td>{produit.Status_Tableau}</td>
-                                                  <td>
-                                                       <div className="modifier_btn">
-                                                            <Link to="" className='modifier_cat'>Modifier</Link>
+                                                  <td className='voir_action'>
+                                                       <div className="voir_btn">
+                                                            <Link to="" className='lien_voir'><img src={Editer} alt="" /></Link>
                                                        </div>
                                                   </td>
-                                                  <td>
-                                                       <button>Supprimer</button>
+                                                  <td className='editer_action'>
+                                                       <button><img src={Delete} alt="" /></button>
                                                   </td>
                                              </tr>
                                              )

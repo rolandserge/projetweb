@@ -158,7 +158,7 @@ const Payement = () => {
                          </div>
                          <div>
                               <label htmlFor="">Entrer votre numero de telephone</label>
-                              <input type="text" name="" ref={telephoneRef} id="" required placeholder='Ex: 07 65 55 66 54 / 05 56 65 13 78' />
+                              <input type="number" name="" ref={telephoneRef} id="" required placeholder='Ex: 0765556654 / 0556651378' />
                          </div>
                          <div className='email_livraison'>
                               <label htmlFor="">Entrer votre e-mail</label>

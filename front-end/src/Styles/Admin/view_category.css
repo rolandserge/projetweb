@@ -1,12 +1,12 @@
 .category_div {
      background: white;
-     padding: 1.2em;
-     margin: 2em 2em 2em 0;
+     /* padding: 1.2em; */
+     margin: 0 0.8em 1em 0;
 }
 .category_div .cat_titre {
      text-transform: uppercase;
      font-weight: 500;
-     font-size: 1.2em;
+     font-size: 1em;
      /* background: red; */
 }
 .category_div .category_element {
@@ -22,8 +22,8 @@
      width: 12%;
 }
 .category_div .category_element .category_nb select {
-     width: 45%;
-     height: 4vh;
+     width: 90%;
+     height: 5vh;
      outline-color: blue;
      border-radius: 3px;
      cursor: pointer;
@@ -71,13 +71,12 @@
     /* Les bordures du tableau seront collées (plus joli) */
 } 
 .table th {
-     height: 9vh;
+     height: 8vh;
 }
 .table td 
 {
-    border-bottom: 2px solid #f6f6f6;
+    /* border-bottom: 2px solid #f6f6f6; */
     height: 8vh;
-    text-align: center;
     text-align: center;
 }
 .table .id_category {
@@ -98,12 +97,13 @@
      width: 22%;
 }
 .table thead {
-     background: blue;
-     color: white;
+     /* background: blue; */
+     /* color: white; */
+     border: 1px solid;
 }
 .table .tbody td .modifier_btn {
      width: 60%;
-     background: #f6f6f6;
+     background: blue;
      height: 6vh;
      margin-left: 1em;
      display: flex;
@@ -116,13 +116,4 @@
      color: black;
      font-weight: 500;
 }
-.table .tbody td button {
-     border: none;
-     background: red;
-     color: white;
-     height: 6vh;
-     opacity: 0.5;
-     width: 70%;
-     cursor: pointer;
-     border-radius: 3px;
-}
+

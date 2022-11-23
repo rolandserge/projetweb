@@ -17,6 +17,10 @@ import Payement from './Pages/Users/Payement';
 import Finish from './Pages/Users/Finish';
 import ProtectedRoute from './Routes/ProtectedRoute';
 import PublicRoute from './Routes/PublicRoute';
+import ViewCommande from './Component/Admin/Commande/ViewCommande';
+import DetailCommande from './Component/Admin/Commande/DetailCommande';
+import TotalCommande from './Component/Admin/Commande/TotalCommande';
+import Utilisateurs from './Component/Admin/Utilisateurs/Utilisateurs';
 
 
 axios.defaults.headers = {
@@ -47,7 +51,7 @@ function App() {
           <Route path='/panier/*' element={<Panier />} />
           <Route path='/cards/*' element={<Card />} />
           <Route path='/detail-tableau/:id' element={<DetailTableau />} />
-          
+
           <Route element={<PublicRoute />}>
               <Route path='/login/*' element={<Login />} />
               <Route path='/register/*' element={<Register />} />
@@ -65,6 +69,10 @@ function App() {
                   <Route path='/admin/product/view-product/*' element={<ViewProduct />} />
                   <Route path='/admin/category/add-category/*' element={<AddCategory />} />
                   <Route path='/admin/category/view-category/*' element={<ViewCategory />} />
+                  <Route path='/admin/commande/view-commandes/*' element={<ViewCommande />} />
+                  <Route path='/admin/commande/view-commandes/detail-commande/:id/*' element={<DetailCommande />} />
+                  <Route path='/admin/commande/view-commandes/total-commande/:id/*' element={<TotalCommande />} />
+                  <Route path='/admin/utilisateurs/view-utilisateur/*' element={<Utilisateurs />} />
                 {/* </Route> */}
               </Route>
           </Route>

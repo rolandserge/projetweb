@@ -54,7 +54,7 @@ const Panier = () => {
                                         <button className='action' onClick={() => dispatch(increment(card))}>+</button>
                                    </div>
                                    <div className="prix_unit">
-                                        <p>{card.Prix_Tableau.toLocaleString()} FCFA</p>
+                                        <p>{card.Prix_Tableau.toLocaleString()} <span>FCFA</span></p>
                                    </div>
                                    <div className="total">
                                         <p>{(card.Prix_Tableau * card.quantite).toLocaleString()} FCFA</p>

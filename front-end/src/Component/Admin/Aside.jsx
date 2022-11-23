@@ -16,7 +16,7 @@ const Aside = () => {
                     <Link to="/admin/index" className="lien">Dashbord</Link>
                </div>
                <div>
-                    <Link to="#" className="lien">Commandes</Link> 
+                    <Link to="/admin/commande/view-commandes" className="lien">Commandes</Link> 
               </div>
               <div>
                <div onClick={(e) => setOpen(!open)} className='click'> <div>Categorie</div><span>v</span></div>
@@ -45,7 +45,7 @@ const Aside = () => {
                     {
                          open2 && (
                               <div className='content-item'>
-                                   <Link to="#" className="lien">View utilisateur</Link>
+                                   <Link to="/admin/utilisateurs/view-utilisateur" className="lien">View utilisateur</Link>
                                    <Link to="#" className="lien">Add utilisateur</Link>
                               </div>
                          )
