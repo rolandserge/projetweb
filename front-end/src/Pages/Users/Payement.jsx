@@ -2,10 +2,11 @@ import axios from 'axios';
 import React, {useState, useEffect, useRef} from 'react';
 import {useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-// import Card from '../../Component/Users/Card';
 import Navbar from '../../Component/Users/Navbar';
 import "../../Styles/User/Payement.css"
 import {clearCard } from '../../Redux/SystemPanier';
+import moment from 'moment';
+import "moment/locale/fr"
 
 const Payement = () => {
 
@@ -13,6 +14,11 @@ const Payement = () => {
 
      const dispatch = useDispatch()
      const navigate = useNavigate()
+     
+     var date = new Date() //la date d'aujourdui
+     var surlendemain = date.setDate(date.getDate() + 2) //la date du surlendemain
+     // console.log(moment(surlendemain))
+     const date_livraison = moment(surlendemain).locale("fr").format('LL') // afficher la date actuelle
 
      useEffect(() => {
           
@@ -82,6 +88,7 @@ const Payement = () => {
           formData.append("email", email)
           formData.append("telephone", telephone)
           formData.append("lieu_livraison", lieu)
+          formData.append("date_livraison", date_livraison)
           formData.append("panier", JSON.stringify(cards))
           formData.append("totalAmont", totalAmont)
 

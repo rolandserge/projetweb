@@ -4,11 +4,22 @@ import Editer from "../../../Images/Admin/editer.png"
 import Voir from "../../../Images/Admin/voir.png"
 import "../../../Styles/Admin/Commande.css"
 import axios from 'axios';
+import moment from "moment"
+import "moment/locale/fr"
 import Statistique from '../Dashbord/Statistique';
 
 const ViewCommande = () => {
 
      const [commandes, setCommandes] = useState([])
+
+     var date = new Date() //la date d'aujourdui
+     console.log(date)
+     // var demain = date.setDate(date.getDate() + 2) //la date du surlendemain
+
+     // var avril = moment(demain).locale("fr").format('LL') // afficher la date actuelle
+
+     // console.log(avril)
+
 
      useEffect(() => {
           (async function () {
@@ -82,7 +93,7 @@ const ViewCommande = () => {
                                                        <td><span>#</span> {commande.id}</td>
                                                        <td>{commande.lieu_livraison}</td>
                                                        <td>{formatDate(commande.created_at)}</td>
-                                                       <td>{commande.date_livraison} 22-01-2100</td>
+                                                       <td>{commande.date_livraison}</td>
                                                        <td>{commande.status}</td>
                                                        <td>{commande.total_commande.toLocaleString()} <span>FCFA</span></td>
                                                        <td className='editer_action'>

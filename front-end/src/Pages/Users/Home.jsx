@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../Component/Users/Navbar';
 // import tableau from "../Images/tableau.jpg"
 import "../../Styles/User/Hom.css"
-// import Sliders from '../Component/Sliders';
-// import Sliders from '../../Component/Slide';
-// import Promotion from '../../Component/Users/Promotion';
+import Header from "../../Images/header.png"
 import Service from '../../Component/Users/Service';
 import Footer from '../../Component/Users/Footer';
 import Tableaux from '../../Component/Users/Tableaux';
@@ -18,7 +16,7 @@ const Home = () => {
      if(localStorage.getItem('auth_token')) {
           
           value = <div>
-               <Link >Deconnexion</Link>
+               <button>Deconnexion</button>
           </div>
 
     } else {
@@ -36,19 +34,22 @@ const Home = () => {
                </header>
                <main>        
                     <div className='images'>      
-                         <div className='base'>
-                         <div>
+                         {/* <div className='base'> */}
+                         <div className='images_infos'>
                               <div className='bienvenue'>
-                                   <h1>TABLEAUX MODERNES</h1>
-                                   <p>Des toiles d’artiste disponibles à la vente directe ou sur commande</p>
+                                   <h1>les produits vivriers pres de vous</h1>
+                                   <p>Acheter vos produits vivriers plus facilement et moins chers sans vous deplacement</p>
                               </div>
                               <div className='authentification'>
                                    {
                                         value
                                    }
                               </div> 
-                              </div>
-                         </div>            
+                         </div>
+                         <div className='image_header'>
+                              <img src={Header} alt="" />
+                         </div>
+                         {/* </div>             */}
                     </div>
                     
                     {/* <div className='slider_container'> */}
