@@ -8,6 +8,8 @@ const Tableaux = () => {
 
      const [tableaux, setTableaux] = useState([])
      const [search, setSearch] = useState("")
+     const [open, setOpen] = useState(false)
+     // const [cat2, setCat2] = useState(false)
 
      useEffect(() => {
 
@@ -35,6 +37,16 @@ const Tableaux = () => {
                     <div className='search'>
                          <input type="search" onChange={(event) => setSearch(event.target.value)} placeholder='Rechercher des tableaux par leur noms' name="search" />
                     </div>
+               </div>
+               <div className="listes_categories">
+                    <button onClick={() => setOpen(!open)} className={`${open ? 'active': ''}`}>Categorie 1</button>
+                    <button onClick={() => setOpen1(!open)} className={`${open ? 'active': ''}`}>Categorie 1</button>
+                    <button onClick={() => setOpen2(!open)} className={`${open ? 'active': ''}`}>Categorie 1</button>
+                    <button onClick={() => setOpen(!open)} className={`${open ? 'active': ''}`}>Categorie 1</button>
+                    <button onClick={() => setOpen(!open)} className={`${open ? 'active': ''}`}>Categorie product 1</button>
+                    <button onClick={() => setOpen(!open)} className={`${open ? 'active': ''}`}>Categorie 1</button>
+                    {/* <button>Categorie 1</button> */}
+                    {/* <button>Categorie 1</button> */}
                </div>
                <div className='cards'>
                     {

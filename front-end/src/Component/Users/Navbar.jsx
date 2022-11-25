@@ -72,7 +72,7 @@ const Navbar = () => {
                <div className='element'>
                     <div>
                          <Link className='item' to="/">Acceuil</Link>
-                    </div> 
+                    </div>
                     <div>
                          <Link className='item' to="">Tableaux</Link>
                     </div>

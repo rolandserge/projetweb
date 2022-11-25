@@ -16,14 +16,14 @@ const Home = () => {
      if(localStorage.getItem('auth_token')) {
           
           value = <div>
-               <button>Deconnexion</button>
+               <button className='deconnexion'>Deconnexion</button>
           </div>
 
     } else {
 
           value = <div>
-              <Link to="/login" className='login'>Login</Link>
-              <Link to="/register" className='register'>Register</Link>
+              <Link to="/login" className='login'>Se connecter</Link>
+              <Link to="/register" className='register'>S'enregister</Link>
          </div>
     }
      
@@ -51,14 +51,8 @@ const Home = () => {
                          </div>
                          {/* </div>             */}
                     </div>
-                    
-                    {/* <div className='slider_container'> */}
 
-               
-                              {/* <h2>Les nouveaux tableaux</h2> */}
-               
-                         {/* <Sliders /> */}
-                    {/* </div> */}
+
                     <Tableaux />
                     {/* <Promotion /> */}
                     <Service />
