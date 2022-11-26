@@ -74,9 +74,9 @@ const DetailTableau = () => {
                                    <div className='Tableau_image'>
                                         {isloading ? '' : <img src={`http://127.0.0.1:8000/${tableau.Image_Tableau}`} alt="" /> }
                                    </div>
-                                   <div className='Tableau_dimension'>
+                                   {/* <div className='Tableau_dimension'>
                                         <p>Dimension du tableau {isloading ? '' : tableau.Largeur_Tableau} <span>cm x</span> {isloading ? '' : tableau.Hauteur_Tableau} <span>cm</span> </p>
-                                   </div>
+                                   </div> */}
                               </div>
                               <div className='Tableau_infos'>
                                    <div>
@@ -104,8 +104,7 @@ const DetailTableau = () => {
                                         <ul>
                                              <li>* Payement securise</li>
                                              <li>* Livraison assurée dans le temps</li>
-                                             <li>* Les oeuvres uniques</li>
-                                             <li>* Les peintres profesionnels a la confection de vos tableaux </li>
+                                             {/* <li>* Les peintres profesionnels a la confection de vos tableaux </li> */}
                                         </ul>
                                    </div>
                               </div>
@@ -113,7 +112,7 @@ const DetailTableau = () => {
                     </div>
                </div>
                <div>
-                    <div>
+                    {/* <div>
                          <p className='fiche_technique'>Fiche technique du tableau choisi</p>
                     </div>
                     <div className='tables_div'>
@@ -147,7 +146,7 @@ const DetailTableau = () => {
                                    </tr>
                               </tbody>
                          </table>
-                    </div>
+                    </div> */}
                </div>
           </>
      );

@@ -110,16 +110,16 @@ body {
      /* background: orange; */
      height: 10vh;
 }
-.listes_categories button {
-     border: none;
-     height: 6vh;
+.listes_categories .button {
+     text-decoration: none;
+     padding: 0.5em 1em;
      font-size: 1.1em;
+     border: 1px solid #F6F6F6;
      color: black;
-     cursor: pointer;
-     /* width: 90%; */
      border-radius: 3px;
 }
 .listes_categories .active {
      background: orange;
      color: white;
+     border: none;
 }

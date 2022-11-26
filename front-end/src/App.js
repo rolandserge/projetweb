@@ -21,6 +21,7 @@ import ViewCommande from './Component/Admin/Commande/ViewCommande';
 import DetailCommande from './Component/Admin/Commande/DetailCommande';
 import TotalCommande from './Component/Admin/Commande/TotalCommande';
 import Utilisateurs from './Component/Admin/Utilisateurs/Utilisateurs';
+import Categories from './Component/Users/Categories';
 
 
 axios.defaults.headers = {
@@ -47,7 +48,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/*" element={<Home />} />
+        <Route path="/*" element={<Home />} />
+          <Route element={<Home />}>
+              <Route path='/categories/:categorie' element={<Categories />} />
+          </Route>
           <Route path='/panier/*' element={<Panier />} />
           <Route path='/cards/*' element={<Card />} />
           <Route path='/detail-tableau/:id' element={<DetailTableau />} />
@@ -63,7 +67,6 @@ function App() {
 
           <Route element={<PrivateRoute />}>
               <Route element={<Dashbord />}>
-                {/* <Route element={<ProtectedRoute />}> */}
                   <Route path='/admin/index/*' element={<Bord />} />
                   <Route path='/admin/product/add-product/*' element={<AddProduct />} />
                   <Route path='/admin/product/view-product/*' element={<ViewProduct />} />
@@ -73,7 +76,6 @@ function App() {
                   <Route path='/admin/commande/view-commandes/detail-commande/:id/*' element={<DetailCommande />} />
                   <Route path='/admin/commande/view-commandes/total-commande/:id/*' element={<TotalCommande />} />
                   <Route path='/admin/utilisateurs/view-utilisateur/*' element={<Utilisateurs />} />
-                {/* </Route> */}
               </Route>
           </Route>
         </Routes>

@@ -39,7 +39,7 @@ class ProductController extends Controller
             'Prix_Tableau' => 'required|numeric',
             'Largeur_Tableau' => 'required|numeric',
             'Hauteur_Tableau' => 'required|numeric',
-            'Image_Tableau' => 'required|image|mimes:jpg,jpeg',
+            'Image_Tableau' => 'required|image|mimes:jpg,jpeg,png',
             'Format_Tableau' => 'required|max:100',
             'Quantite_Tableau' => 'required|numeric',
             'Couleur_Tableau' => 'required|max:100',

@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../../Styles/User/Card.css"
-const Card = ({ table }) => {
-     
+const Card = ({ produit }) => {
+    
      return (  
-          <Link to={`/detail-tableau/${table.id}`} className='card'>                
+          <Link to={`/detail-tableau/${produit.id}`} className='card'>                
                {/* <div className="card"> */}
                     <div className="image">
-                         <img src={`http://127.0.0.1:8000/${table.Image_Tableau}`} alt={table.Name_Tableau} />
+                         <img src={`http://127.0.0.1:8000/${produit.Image_Tableau}`} alt={produit.Name_Tableau} />
                     </div>
                     <div className="infos">
-                         <p className='nom'>{table.Name_Tableau}</p>
-                         <p className='prix'>{table.Prix_Tableau.toLocaleString()} FCFA</p>
+                         <p className='nom'>{produit.Name_Tableau}</p>
+                         <p className='prix'>{produit.Prix_Tableau.toLocaleString()} FCFA / KG</p>
                     </div>
                {/* </div> */}
           </Link>       

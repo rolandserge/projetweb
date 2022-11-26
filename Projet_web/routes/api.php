@@ -30,7 +30,7 @@ Route::middleware('guest')->group(function() {
 
 Route::get('/user/get-product', [FrontendController::class, 'GetTableaux']);
 Route::get('/user/detail-product/{id}', [FrontendController::class, 'DetailTableaux']);
-
+Route::get('/user/{categorie}', [FrontendController::class, 'getproduits']);
 
 Route::post('/user/commande', [CommandeController::class, 'placeorder']);
 
