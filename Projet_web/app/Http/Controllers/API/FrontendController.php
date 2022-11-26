@@ -25,6 +25,7 @@ class FrontendController extends Controller
     public function getproduits($categorie) {
 
         $category = Category::where('Name_category', $categorie)->first();
+        $produits = Product::where("Status_Tableau", "Afficher")->with('Categorie')->get();
 
         if($category) {
 
@@ -35,7 +36,8 @@ class FrontendController extends Controller
                     return response()->json([
 
                         'status' => 200,
-                        'produits' => $product
+                        'produits' => $product,
+                        'allproducts' => $produits
                     ]);
 
                 } else {

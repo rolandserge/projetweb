@@ -7,6 +7,7 @@ const Categories = () => {
 
      const categorie = useParams()
      const [produits, setProduits] = useState([])
+     const [allproduct, setAllproduct] = ([])
      const [search, setSearch] = useState("")
 
      useEffect(() => {
@@ -20,6 +21,7 @@ const Categories = () => {
                     if(response.data.status === 200) {
 
                          setProduits(response.data.produits)
+                         setAllproduct(response.data.allproducts)
 
                     } else if(response.data.status === 400) {
 
@@ -38,13 +40,15 @@ const Categories = () => {
                
         Produits()
      }, [categorie])
+
+     
   
      return (
           <>
           <div className='searchbar'>
-                    <div className='search'>
-                         <input type="search" onChange={(event) => setSearch(event.target.value)} placeholder='Rechercher des tableaux par leur noms' name="search" />
-                    </div>
+               <div className='search'>
+                    <input type="search" onChange={(event) => setSearch(event.target.value)} placeholder='Rechercher des tableaux par leur noms' name="search" />
+               </div>
           </div>
           <div className='cards'>
                {

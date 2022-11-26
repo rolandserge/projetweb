@@ -56,7 +56,7 @@ const Tableaux = () => {
                          .map((produit, index) => {
                               return (
                              
-                                   <Card key={index} produit={produit} />
+                                   <Card key={index} produit={produit}/>
                              
                               )
                          })
