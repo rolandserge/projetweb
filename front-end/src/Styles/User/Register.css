@@ -4,14 +4,13 @@
      box-sizing: border-box;
 }
 .fonds {
-     background: #1D71B8;
      height: 87vh;
      display: flex;
      justify-content: center;
      align-items: center;
 }
 .fonds .formulaires {
-     background: white;
+     background: #C2FFC0;
      width: 40%;
      height: 60vh;
      border-radius: 5px;
@@ -31,8 +30,8 @@
      height: 7vh;
      width: 80%;
      padding: 0 0 0 1rem;
-     border: 1px solid #1D71B8;
-     outline-color: #F9B233;
+     border: 1px solid;
+     outline-color: black;
      border-radius: 3px;
      background: #F6F6F6;
 }
@@ -41,7 +40,7 @@
      border: none;
      border-radius: 3px;
      font-size: 1.2rem;
-     background: #1D71B8;
+     background: #03AA00;
      color: white;
      height: 6vh;
      transition: 2s;
@@ -57,7 +56,7 @@ h2 {
 }
 .loginbtn {
      text-decoration: none;
-     color: #F9B233;
+     color: black;
      font-size: 1.3rem;
      float: right;
      /* background: red; */

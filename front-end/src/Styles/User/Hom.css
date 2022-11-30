@@ -2,68 +2,127 @@ body {
      background: white;
 }
 .images {
-     height: 63vh;
-     background: blue;
+     height: 75vh;
      display: flex;
      justify-content: space-around;
-     align-items: center;
+     margin: 0.5em;
      width: 100%;
 }
-
-.images .images_infos {
-     height: 40vh;
+.images .image_centrale {
+     width: 58%;
+     background-image: url("../../Images/fond.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     border-radius: 4px;
 }
-
-.bienvenue {
-     color: white;
+.images .image_droite {
+     width: 20%;
      display: flex;
-     height: 22vh;
+     flex-direction: column;
+     justify-content: space-between;
+     
+}
+.images .image_droite .image_droite_1 {
+     height: 37vh;
+     background-image: url("../../Images/recette3.jpg");
+     width: 100%;
+     background-position: center;
+     background-size: cover;
+     padding: 0.5em;
+     border-radius: 4px;
+     border: 1px solid orange;
+     background-repeat: no-repeat;
+}
+.images .image_droite .image_droite_2 {
+     background-image: url("../../Images/recette1.jpg");
+     background-position: center;
+     width: 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover ;
+     border-radius: 4px;
+     padding: 1em;
+     height: 37vh;
+     border: 1px solid #03AA00;
+}
+.images .image_gauche {
+     width: 20%;
+     /* border: 1px solid; */
+     display: flex;
+     background: #C2FFC0;
      flex-direction: column;
      justify-content: space-around;
 }
-.bienvenue h1 {
-     width: 70%;
-     text-transform: uppercase;
-     /* text-align: center; */
-}
-.images .images_infos .authentification {
-     height: 15vh;
+.images .image_gauche .authentification {
+     /* border: 1px solid; */
+     height: 40%;
      display: flex;
-     justify-content: left;
+     justify-content: space-around;
+     flex-direction: column;
      align-items: center;
 }
-
-.images .authentification .deconnexion {
-     background: red;
-     color: white;
-     border: none;
-     padding: 0.9rem 3rem;
-     border-radius: 30px;
-     font-size: 1.3em;
-     font-weight: 500;
-}
-
-.images .authentification .login {
+.images .image_gauche .authentification .login {
      text-decoration: none;
      background: orange;
      color: white;
      font-size: 1.2em;
-     padding: 0.9rem 3rem;
+     padding: 0.6em 1.2em;
      border-radius: 30px;
      font-weight: 500;
      text-align: center;
-     margin-right: 2em;
 }
 
-.images .authentification .register {
+.images .image_gauche .authentification .register {
      text-decoration: none;
      background: white;
      color: #1D71B8;
-     padding: 0.9rem 3rem;
+     padding: 0.6em 1.2em;
      font-weight: 500;
      border-radius: 30px;
      font-size: 1.2em;
 }
+.images .image_gauche p {
+     text-transform: uppercase;
+     text-align: center;
+     padding: 0.5em 0.5em 0 0.5em;
+     font-size: 1.6em;
+     line-height: 2;
+     font-weight: 500;
+}
+
+.images .deconnexion {
+     background: #03AA00;
+     color: white;
+     border: none;
+     padding: 0.6rem 1.2rem;
+     border-radius: 30px;
+     font-size: 1.3em;
+     font-weight: 500;
+     animation: animate infinite 3s linear;
+}
+
+@keyframes animate {
+     /* to {
+          transform: rotate(0deg);
+          /* transition: .2s; */
+          /* opacity: 0; */
+     /* }
+     from {
+          transform: rotate(360deg);
+     } */ 
+     to {
+          transform: translateY(0px);
+          transition: .2s;
+          /* opacity: 0; */
+     }
+     from {
+          transform: translateY(50px);
+          transition: .3s;
+     }
+}
+
+
 
 .searchbar {
      display: flex;
@@ -84,10 +143,10 @@ body {
      height: 7vh;
      width: 90%;
      /* border-radius: 5px 0 0 5px; */
-     outline-color: #1D71B8;
+     outline-color: #03AA00;
      padding: 0 0 0 1rem;
      background: #F6F6F6;
-     border: 1px solid #1D71B8;
+     border: 1px solid #03AA00;
 }
 /* .searchbar .search button {
      background: #1D71B8;
@@ -117,6 +176,13 @@ body {
      border: 1px solid #F6F6F6;
      color: black;
      border-radius: 3px;
+     transition: 1s;
+}
+.listes_categories .button:hover {
+     transform: scale(1.1);
+     background: orange;
+     color: wheat;
+     transition: 1s;
 }
 .listes_categories .active {
      background: orange;

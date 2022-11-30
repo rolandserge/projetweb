@@ -97,11 +97,9 @@ const ViewCommande = () => {
                                                        <td>{commande.status}</td>
                                                        <td>{commande.total_commande.toLocaleString()} <span>FCFA</span></td>
                                                        <td className='editer_action'>
-                                                            {/* <td className='voir_action'> */}
-                                                                 <div className="voir_btn">
-                                                                      <Link to={`/admin/commande/view-commandes/total-commande/${commande.id}`} className='lien_voir'><img src={Voir} alt="" /></Link>
-                                                                 </div>
-                                                            {/* </td> */}
+                                                            <div className="voir_btn">
+                                                                 <Link to={`/admin/commande/view-commandes/total-commande/${commande.id}`} className='lien_voir'><img src={Voir} alt="" /></Link>
+                                                            </div>
                                                        </td>
                                                        <td className='editer_action'>
                                                             {/* <td className='voir_action'> */}

@@ -34,49 +34,40 @@ const Tableaux = () => {
         Tableaux()
      }, [])
      var donne = ""
-     if(location.pathname === "/") {
-          {
-                         // var key = ["Name_Tableau, categorie."]
-               donne = 
-               tableaux.filter((produit) => {
+     // if(location.pathname === "/") {
+          // {
+               //           // var key = ["Name_Tableau, categorie."]
+               // donne = 
+               // tableaux.filter((produit) => {
 
-                              if(search === "") {
+               //                if(search === "") {
 
-                                   return produit
+               //                     return produit
 
-                              } else if(produit.Name_Tableau.toLowerCase().includes(search.toLowerCase())) {
+               //                } else if(produit.Name_Tableau.toLowerCase().includes(search.toLowerCase())) {
 
-                                   if(produit.Name_Tableau === 0) {
+               //                     if(produit.Name_Tableau === 0) {
 
-                                        return "Aucun tableau est associé a ce nom"
-                                   }
-                                   return produit
-                              }
-                         })
-                         .map((produit, index) => {
-                              return (
+               //                          return "Aucun tableau est associé a ce nom"
+               //                     }
+               //                     return produit
+               //                }
+               //           })
+               //           .map((produit, index) => {
+               //                return (
                              
-                                   <Card key={index} produit={produit}/>
+                                   // <Card produits={tableaux}/>
                              
-                              )
-                         })
-                    }
-     } else {
-          donne = <Outlet />
-     }
+                    //           )
+                    //      })
+                    // }
+     // } else {
+          // donne = <Outlet />
+     // }
      return (
           <>
                
-               <div className="listes_categories">
-                    {
-                         categories.map((categorie, index) => {
-                              return (
-
-                                   <Link key={index} className={ location.pathname === `/categories/${categorie.Name_category}` ? 'button active' : "button"} to={`/categories/${categorie.Name_category}`}>{categorie.Name_category}</Link>
-                              )
-                         })
-                    }
-               </div>
+              
                <div className='cards'>
                     {/* {
                          // var key = ["Name_Tableau, categorie."]

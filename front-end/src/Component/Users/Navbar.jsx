@@ -39,9 +39,6 @@ const Navbar = () => {
 
           auth = 
           <> 
-               <div onClick={lagout}>
-                    Logout
-               </div>
                <div className='photo_user_div'>
                     <div className='user_image' onClick={() => setOpen(!open)}>
                          <img src={User} alt="" />
@@ -49,12 +46,10 @@ const Navbar = () => {
                     {
                          open && 
                               <div className={`user_image_element ${open ? 'active' : 'inactive'}`}>                    
-                                   <Link to="" className=''>Mon profil</Link>
-                                   <Link to="" className=''>Tableaux</Link>
-                                   <Link to="" className=''>Editer profiel</Link>
-                                   <Link to="" className=''>Message</Link>
-                                   <Link to="" className=''>Parametre</Link>
-                                   <Link to="" className=''>Deconnexion</Link>                         
+                                   <Link to="/mon-profil" className='profil'>Mon profil</Link>
+                                   <Link to="/mon-profil/liste-commandes" className='profil'>Mes commandes</Link>
+                                   <Link to="/mon-profil/editer-profil" className='profil'>Editer mon profil</Link>
+                                   <Link to="" onClick={lagout} className='deconnexion'>Deconnexion</Link>                         
                                 </div>
                     }
                </div>
@@ -73,9 +68,9 @@ const Navbar = () => {
                     <div>
                          <Link className='item' to="/">Acceuil</Link>
                     </div>
-                    <div>
+                    {/* <div>
                          <Link className='item' to="">Tableaux</Link>
-                    </div>
+                    </div> */}
                     
                     <div>
                          <Link className='item' to="">Nos actualités</Link>

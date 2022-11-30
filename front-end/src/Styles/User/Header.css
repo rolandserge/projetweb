@@ -9,13 +9,27 @@
      align-items: center;
      height: 13vh;
      /* background: white; */
-     background: #f6f6f6;
+     background: #03AA00;
+     color: white;
      /* border-bottom: 1px solid; */
      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 .item {
      text-decoration: none;
+     background: white;
      color: black;
+     font-size: 1em;
+     font-weight: 400;
+     padding: 0.3em 1em;
+     border-radius: 3px;
+     opacity: 1;
+     transition: opacity 2s;
+     /* text-transform: uppercase; */
+}
+.item:hover {
+     opacity: 0.4;
+     color: #03AA00;
+     transition: opacity 2s;
 }
 .logo {
      width: 20%;
@@ -30,9 +44,9 @@
 }
 
 .element span {
-     background: #F9B233;
+     background: white;
      position: relative;
-     color: white;
+     color: #03AA00;
      top: -1.8rem;
      left: -1rem;
      padding: 0.2rem 0.6rem;
@@ -53,26 +67,42 @@ span {
      /* height: 15vh; */
 }
 .user_image img {
-
      width: 100%;
 }
 .user_image_element {
      display: flex;
      flex-direction: column;
      justify-content: space-around;
-     background: blue;
+     background: white;
      width: 15%;
+     padding: 0em 1em;
+     height: 30vh;
      position: absolute;
+}
+.user_image_element .profil {
+     text-decoration: none;
+     color: black;
+     font-size: 1em;
+}
+
+.user_image_element .deconnexion {
+
+     text-decoration: none;
+     padding: 0.5em 1em;
+     background: red;
+     width: 80%;
+     color: white;
+     border-radius: 3px;
 }
 .user_image_element.active {
      opacity: 1;
      visibility: visible;
      transform: translateY(0);
-     transition: 10s ease;
+     transition:  transfrom .3s;
 }
 .user_image_element.inactive {
      opacity: 0;
      visibility: hidden;
-     transform: translateY(-20px);
-     transition: 10s ease;
+     transform: translateY(-50px);
+     transition: transfrom .3s;
 }

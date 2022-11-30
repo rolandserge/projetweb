@@ -22,6 +22,10 @@ import DetailCommande from './Component/Admin/Commande/DetailCommande';
 import TotalCommande from './Component/Admin/Commande/TotalCommande';
 import Utilisateurs from './Component/Admin/Utilisateurs/Utilisateurs';
 import Categories from './Component/Users/Categories';
+import Profil from './Pages/Users/Profil';  
+import ModifierProfil from './Component/Users/Profil/ModifierProfil';
+import CommandeUser from './Component/Users/Profil/CommandeUser';
+import VoirProfil from './Component/Users/Profil/VoirProfil';
 
 
 axios.defaults.headers = {
@@ -48,7 +52,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-        <Route path="/*" element={<Home />} />
+          <Route path="/*" element={<Home />} />
           <Route element={<Home />}>
               <Route path='/categories/:categorie' element={<Categories />} />
           </Route>
@@ -61,6 +65,11 @@ function App() {
               <Route path='/register/*' element={<Register />} />
           </Route>
           <Route element={<ProtectedRoute />} >
+              <Route element={<Profil />}>
+                  <Route path='/mon-profil/editer-profil' element={<ModifierProfil />} />
+                  <Route path='/mon-profil' element={<VoirProfil />} />
+                  <Route path='/mon-profil/liste-commandes' element={<CommandeUser />} />
+              </Route>
               <Route path='/detail-payement/*' element={<Payement />} />
               <Route path='/Finish/*' element={<Finish />} />
           </Route>

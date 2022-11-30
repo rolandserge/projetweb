@@ -1,0 +1,38 @@
+.liste_commande_user {
+     background: white;
+     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.liste_commande_user .commande_nom {
+     background: #f6f6f6;
+     height: 7vh;
+     display: flex;
+     align-items: center;
+     padding-left: 1em;
+     text-transform: uppercase;
+     font-weight: 500;
+}
+.user_commande_table {
+     border-collapse: collapse;
+     /* padding: 2em 1em; */
+     margin: 0.8em 1em;
+}
+.user_commande_table .user_commande_thead {
+     background: white;
+}
+.user_commande_table td, th, td {
+     border: 1px solid #f6f6f6;
+     height: 7vh;
+}
+.user_commande_table .commande_id {
+     width: 10%;
+}
+.user_commande_table .commande_status {
+     width: 20%;
+}
+.user_commande_table .action_commande {
+     width: 8%;
+}
+.user_commande_table .user_commande_tbody .voir_commande .lien_voir img {
+     width: 40%;
+
+}

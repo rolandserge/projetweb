@@ -7,9 +7,9 @@ const Categories = () => {
 
      const categorie = useParams()
      const [produits, setProduits] = useState([])
-     const [allproduct, setAllproduct] = ([])
-     const [search, setSearch] = useState("")
-
+    
+     // const [categories, setCategories] = useState([])
+     // const [search, setSearch] = useState("")
      useEffect(() => {
 
           const Produits = async() => {
@@ -21,7 +21,7 @@ const Categories = () => {
                     if(response.data.status === 200) {
 
                          setProduits(response.data.produits)
-                         setAllproduct(response.data.allproducts)
+                         // setAllproduct(response.data.allproducts)
 
                     } else if(response.data.status === 400) {
 
@@ -45,38 +45,29 @@ const Categories = () => {
   
      return (
           <>
-          <div className='searchbar'>
-               <div className='search'>
-                    <input type="search" onChange={(event) => setSearch(event.target.value)} placeholder='Rechercher des tableaux par leur noms' name="search" />
-               </div>
-          </div>
+          
           <div className='cards'>
                {
+
                          // var key = ["Name_Tableau, categorie."]
-                         produits.filter((produit) => {
+                         // produits.filter((produit) => {
 
-                              if(search === "") {
-
-                                   return produit
-
-                              } else if(produit.Name_Tableau.toLowerCase().includes(search.toLowerCase())) {
-
-                                   if(produit.Name_Tableau === 0) {
-
-                                        return "Aucun tableau est associé a ce nom"
-                                   }
-                                   return produit
-                              }
-                         })
-                         .map((produit, index) => {
-
-                              return (
-                             
-                                   <Card key={index} produit={produit} />
-                             
-                              )
-                         })
+                         //      if(search === "") {
+                         //           return produit
+                         //      } else if(produit.Name_Tableau.toLowerCase().includes(search.toLowerCase())) {
+                         //           if(produit.Name_Tableau === 0) {
+                         //                return "Aucun tableau est associé a ce nom"
+                         //           }
+                         //           return produit
+                         //      }
+                         // })
+                         // .map((produit, index) => {
+                         //      return (
+                              //           )
+                    //      })
+                    // console.log(produits)
                     }
+                              <Card produits={produits} />
           </div>
           </>
      );

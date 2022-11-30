@@ -143,7 +143,7 @@
      height: 15vh;
 }
 .continuer .button {
-     background: #1D71B8;
+     background: #03AA00;
      color: white;
      border-radius: 5px;
      width: 25%;
@@ -157,7 +157,7 @@
 }
 .continuer .continue {
      text-decoration: none;
-     color: #F9B233;
+     color: black;
      font-size: 1.2rem;
 }
 
