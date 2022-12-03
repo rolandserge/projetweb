@@ -23,41 +23,37 @@
 .Tableau_element {
      display: flex;
      justify-content: space-around;
+     margin: 0 3em;
 }
-.Tableau_element div p {
+/* .Tableau_element div p {
      text-align: center;
      padding-top: 0.4em;
      font-size: 1.1em;
      font-weight: 400;
+} */
+.Tableau_element .Tableau_image{
+     width: 35%;
+     height: 50vh;
+     /* overflow: hidden; */
 }
-.Tableau_element .Tableau_div {
-     height: 80vh;
-     width: 65%;
-}
-.Tableau_element .Tableau_div .Tableau_image{
-     width: 100%;
-     height: 90%;
-     overflow: hidden;
-}
-.Tableau_element .Tableau_div .Tableau_image img {
+.Tableau_element .Tableau_image img {
      width: 100%;
      height: 100%;
 }
 .Tableau_element .Tableau_infos {
-     width: 34%;
-     /* text-transform: capitalize; */
-     height: 78vh;
+     width: 60%;
+     height: 50vh;
      display: flex;
-     /* background: #F9B233; */
-     padding-left: 2em;
+     /* border: 1px solid; */
+     padding-left: 1em;
      flex-direction: column;
-     align-items: center;
-     justify-content: space-around;
+     justify-content: space-between;
 }
 .Tableau_element .Tableau_infos div .prix_tableau_p {
      font-size: 1.5em;
-     color: #F9B233;
-     font-weight: 500;
+     color: black;
+     font-weight: bold;
+     /* font-weight: 500; */
 }
 .description_p {
      line-height: 2;
@@ -68,10 +64,12 @@
 .Tableau_element .Tableau_infos .Tableau_panier {
      display: flex;
      align-items: center;
-     width: 65%;
+     width: 37%;
      height: 8vh;
      border-radius: 3px;
-     background: blue;
+     background: #03AA00;
+     border: none;
+     cursor: pointer;
      justify-content: space-around;
 }
 ul li {
@@ -82,31 +80,27 @@ ul li {
      font-family: sans-serif;
 }
 .Tableau_element .Tableau_infos .Tableau_panier .Image_panier {
-     width: 18%;
-     padding: 0.5em;
+     width: 20%;
+     text-align: center;
+     overflow: hidden;
 }
 .Tableau_element .Tableau_infos .Tableau_panier div img {
-     width: 90%;
-     height: 100%
+     width: 80%;
+     height: 100%;
 }
 .Tableau_element .Tableau_infos .Tableau_panier .btn_panier {
      width: 70%;
-     
 }
-.Tableau_element .Tableau_infos .Tableau_panier button {
-     border: none;
+.Tableau_element .Tableau_infos .Tableau_panier .btn_panier p {
      width: 100%;
      color: white;
-     font-size: 1.2em;
-     cursor: pointer;
-     background: none;
+     font-size: 1.5em;
 }
-.tables_div {
+/* .tables_div {
      display: flex;
      justify-content: center;
      align-items: center;
      margin-bottom: 1.5em;
-     /* text-transform: capitalize; */
 }
 .tables {
      border-collapse: collapse;
@@ -120,8 +114,6 @@ ul li {
 .fiche_technique {
      text-align: center;
      font-size: 1.5em;
-     /* background: #F9B233; */
      font-family: sans-serif;
      padding: 0.5em 0;
-     /* text-transform: capitalize; */
-}
+} */

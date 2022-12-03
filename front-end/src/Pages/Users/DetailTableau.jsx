@@ -6,8 +6,7 @@ import Navbar from '../../Component/Users/Navbar';
 import Add from "../../Images/add.png"
 import "../../Styles/User/DetailTableau.css"
 import axios from "axios"
-// import swal from "sweetalert"
-// import swal from '@sweetalert/with-react';
+import ReactImageMagnify from 'react-image-magnify';
 import { useDispatch } from 'react-redux';
 
 const DetailTableau = () => {
@@ -69,14 +68,25 @@ const DetailTableau = () => {
                          <div className='div_nom_cat'>
                               <p>{isloading ? '' : tableau.categorie.Name_category} {isloading ? '' : tableau.Couleur_Tableau} <span>:</span>  {isloading ? '' : tableau.categorie.Description_category}</p>
                          </div>
-                         <div className='Tableau_element'>
-                              <div className='Tableau_div'>
-                                   <div className='Tableau_image'>
-                                        {isloading ? '' : <img src={`http://127.0.0.1:8000/${tableau.Image_Tableau}`} alt="" /> }
-                                   </div>
-                                   {/* <div className='Tableau_dimension'>
-                                        <p>Dimension du tableau {isloading ? '' : tableau.Largeur_Tableau} <span>cm x</span> {isloading ? '' : tableau.Hauteur_Tableau} <span>cm</span> </p>
-                                   </div> */}
+                         <div className='Tableau_element'>          
+                              <div className='Tableau_image'>
+                              <ReactImageMagnify {...{
+                                   smallImage: {
+                                        alt: 'Wristwatch by Ted Baker London',
+                                        isFluidWidth: true,
+                                        src: `http://127.0.0.1:8000/${tableau.Image_Tableau}`,
+                                   },
+                                   largeImage: {
+                                        src: `http://127.0.0.1:8000/${tableau.Image_Tableau }`,
+                                        width: 1000,
+                                        height: 1000
+                                   },
+                                   enlargedImageContainerDimensions: {
+                                        width: '150%',
+                                        height: '150%'
+                                    }
+                              }} />
+                                   {/* {isloading ? '' : <img src={`http://127.0.0.1:8000/${tableau.Image_Tableau}`} alt="" /> } */}
                               </div>
                               <div className='Tableau_infos'>
                                    <div>
@@ -89,24 +99,22 @@ const DetailTableau = () => {
                                    </div>
                                    <div>
                                         <p className='prix_tableau_p'>{isloading ? '' : tableau.Prix_Tableau.toLocaleString()} <span>FCFA</span></p>
-                                        
-                                         {/* {isloading ? '' : tableau.Prix_Tableau} */}
                                    </div>
-                                   <div className='Tableau_panier'>
+                                   <div>
+                                        <ul>
+                                             <li>* Payement a la livraison</li>
+                                             <li>* Livraison assurée dans le temps</li>
+                                             <li>* Meilleure hygienne de vos produits</li>
+                                        </ul>
+                                   </div>
+                                   <button onClick={() => addcard(tableau)} className='Tableau_panier'>
                                        <div className="Image_panier">
                                              <img src={Add} alt="" />
                                        </div>
                                        <div className="btn_panier">
-                                             <button onClick={() => addcard(tableau)}>Ajouter au panier</button>
+                                             <p>Ajouter au panier</p>
                                        </div>
-                                   </div>
-                                   <div>
-                                        <ul>
-                                             <li>* Payement securise</li>
-                                             <li>* Livraison assurée dans le temps</li>
-                                             {/* <li>* Les peintres profesionnels a la confection de vos tableaux </li> */}
-                                        </ul>
-                                   </div>
+                                   </button>
                               </div>
                          </div>
                     </div>
