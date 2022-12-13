@@ -1,18 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../Component/Users/Navbar';
 // import swal from 'sweetalert';
 import "../../Styles/User/Register.css"
 import axios from "axios"
+import Login from './Login';
 
-const Register = () => {
+const Register = ({modal}) => {
 
+     const navigate = useNavigate();
+     
      const pseudoRef = useRef()
      const emailRef = useRef()
      const passwordRef = useRef()
 
      const [errors, setErros] = useState([])
-     const navigate = useNavigate();
+     const [login, setLogin] = useState(false)
    
      const register = async (e) => {
 
@@ -40,11 +43,12 @@ const Register = () => {
 }
      return (
           <div>
-               <Navbar />
+               {/* <Navbar /> */}
                <div className="fonds">
                     <div className="formulaires">
-                         <div>
-                              <h2>Inscription</h2>
+                         <div className='entete'>
+                              <Link to='/'>Home</Link>
+                              <button onClick={modal}>X</button>
                          </div> 
                          <div className="formulaire">    
                               <form action="" onSubmit={register}>
@@ -64,7 +68,9 @@ const Register = () => {
                                    <button>S'enregister</button>
                               </form>
                          </div>
-                         <Link to="/login" className='loginbtn'>Se connecter</Link>
+                         {/* <Link to="/login" className='loginbtn'>Se connecter</Link> */}
+                         {/* <button onClick={() => setLogin(true)} className='loginbtn'>Se connecter</button> */}
+                         {/* <Login open={login} modal={() => setLogin(false)} />  */}
                     </div>
                </div>
           </div>

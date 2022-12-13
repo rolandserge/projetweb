@@ -13,6 +13,7 @@
      margin: 1.1rem 2em 1rem 2em;
      /* overflow: hidden; */
      text-decoration: none;
+     border: 1px solid #f6f6f6;
      transition: transform 330ms ease-in-out;
      /* text-align: center; */
 } 

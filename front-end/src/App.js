@@ -53,9 +53,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<Home />} />
-          <Route element={<Home />}>
-              <Route path='/categories/:categorie' element={<Categories />} />
-          </Route>
           <Route path='/panier/*' element={<Panier />} />
           <Route path='/cards/*' element={<Card />} />
           <Route path='/detail-tableau/:id' element={<DetailTableau />} />

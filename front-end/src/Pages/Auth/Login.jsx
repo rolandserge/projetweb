@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../../Component/Users/Navbar';
+// import Navbar from '../../Component/Users/Navbar';
 // import swal from 'sweetalert';
 import { useRef } from 'react';
 import axios from "axios"
+// import Register from './Register';
 
-const Login = () => {
+const Login = ({modal}) => {
 
      const navigate = useNavigate();
      const emailRef = useRef()
      const passwordRef = useRef()
      const [errors, setErros] = useState([])
+     // const [register, setRegister] = useState(false)
 
      const login = async (e) => {
 
@@ -29,14 +31,13 @@ const Login = () => {
                     localStorage.setItem('auth_name', response.data.name)
      
                     if(response.data.role === "user") {
-     
+
                          navigate('/')
-     
+
                     } else {
-     
                          navigate('/admin/index')
-                    }
-               
+                         
+                    } 
                } else if(response.data.status === 401) {
                     
                     // swal("Error", response.data.message)
@@ -51,11 +52,12 @@ const Login = () => {
      }
      return (
           <div>
-               <Navbar />
+               {/* <Navbar /> */}
                <div className="fonds">
                     <div className="formulaires">
-                         <div>
-                              <h2>Connexion</h2>
+                         <div className='entete'>
+                              <Link to='/'>Home</Link>
+                              <button onClick={modal}>X</button>
                          </div> 
                          <div className="formulaire">    
                               <form action="" onSubmit={login}>        
@@ -66,11 +68,13 @@ const Login = () => {
                                    <input type="password" ref={passwordRef} name="" placeholder='Entrer votre mot de passe'/>
                                    <div>
                                         { errors.password ? (<span>{errors?.password}</span>) : ""}
-                                   </div>    
+                                   </div>
                                    <button>Se connecter</button>
                               </form>
                          </div>
-                         <Link to="/register" className='loginbtn'>S'enregister</Link>
+                         {/* <Link to="/register" className='loginbtn'>S'enregister</Link> */}
+                         {/* <button className='loginbtn' onClick={() => setRegister(true)}>S'inscrire</button> */}
+                         {/* <Register open={register} modal={() => setRegister(false)} /> */}
                     </div>
                </div>
           </div>  

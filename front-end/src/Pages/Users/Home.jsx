@@ -1,55 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../../Component/Users/Navbar';
 import "../../Styles/User/Hom.css"
-import Header from "../../Images/header.png"
-import Service from '../../Component/Users/Service';
 import Footer from '../../Component/Users/Footer';
-import Tableaux from '../../Component/Users/Tableaux';
 import Categories from '../../Component/Users/Categories';
-import Categorie from '../../Component/Users/Categorie';
-import axios from 'axios';
-import Card from '../../Component/Users/Card';
+import Login from '../Auth/Login';
+import Register from '../Auth/Register';
 
 const Home = () => {
 
-     const [categories, setCategories] = useState([])
-     const [produits, setProduits] = useState([])
-     const location = useLocation()
-
-     const [search, setSearch] = useState("")
-
-     var keys = ['Name_Tableau','categorie.Namecategory', 'Prix_Tableau']
-     
-     const recherche = (prod) => {
-
-          return prod.filter((produit) => keys.some((key) => String(produit[key]).toLowerCase().includes(search.toLowerCase())))
-          // return prod.filter( produit => Object.keys(produit).some( keys => String(produit[keys]).toLowerCase().includes(search.toLowerCase())))
-
-     }
-     useEffect(() => {
-
-          const Categories = async() => {
-
-               try {
-                   const response = await axios.get("/api/user/get-product");
-                 
-                    if(response.data.status === 200) {
-
-                         setProduits(response.data.tableaux)
-                         setCategories(response.data.categories)
-                    }
-               } catch (error) {
-
-                   console.log(error);
-               }
-          }
-               
-        Categories()
-     }, [])
+     const [login, setLogin] = useState(false)
+     const [register, setRegister] = useState(false)
 
      var value = ""
-
      if(localStorage.getItem('auth_token')) {
           
           value = <div>
@@ -59,23 +22,17 @@ const Home = () => {
     } else {
 
           value = <>
-               <Link to="/login" className='login'>Se connecter</Link>
-               <Link to="/register" className='register'>S'enregister</Link>
+               {/* <Link to="/login" className='login'>Se connecter</Link> */}
+               {/* <Link to="/register" className='register'>S'enregister</Link> */}
+               <button className='login' onClick={() => setLogin(true)}>Se connecter</button>
+               {login ? <Login modal={() => setLogin(false)} /> : "" }
+               <button className='register' onClick={() => setRegister(true)}>S'inscrire</button>
+               {register ? <Register modal={() => setRegister(false)} /> : "" }
           </> 
     }
-     var produit = ""
 
-     if( location.pathname === "/") {
-     
-          produit = <Card produits={recherche(produits)} />
-          
-     } else {
-
-          produit = <Outlet />
-         
-     }
      return (
-          <div>
+          <div className={ login | register ? "bodyfixed": 'body'}>
                <header>
                     <Navbar />
                </header>
@@ -83,14 +40,18 @@ const Home = () => {
                     <div className='images'>      
                          <div className='image_droite'>
                              <div className="image_droite_1">
+                                   <div className='bg_droite1'>
 
+                                   </div>
                              </div>
                              <div className="image_droite_2">
 
                              </div>
                          </div>
                          <div className='image_centrale'>
-                              
+                              <div className='bg_centrale'>
+
+                              </div>
                          </div>
                          <div className='image_gauche'>      
                               <div>
@@ -105,28 +66,7 @@ const Home = () => {
                               </div>
                          </div>
                    </div>
-
-                    {/* barre de recherche */}
-                    <div className='searchbar'>
-                         <div className='search'>
-                              <input type="search" onChange={(event) => setSearch(event.target.value)} placeholder='Rechercher des tableaux par leur noms' name="search" />
-                         </div>
-                    </div>
-                    <>
-                         {/* //liste de toutes les categories */}
-                         <Categorie categories = {categories }/>
-                    </>
-                    <>
-                         {
-                              // <Outlet />
-                              produit    
-                         }
-                    </>
-                    
-                    {/* <Card produits={recherche(produits)} /> */}
-                    {/* <Outlet /> */}
-                   
-                    <Service />
+                    <Categories />
                </main> 
                <footer>
                     <Footer />

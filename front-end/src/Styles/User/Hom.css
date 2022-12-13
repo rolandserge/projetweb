@@ -1,8 +1,16 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800&display=swap');
+
+* {
+     font-family: 'Poppins', sans-serif;
+}
+.body {
      background: white;
 }
+.bodyfixed {
+     position: fixed;
+}
 .images {
-     height: 75vh;
+     height: 81vh;
      display: flex;
      justify-content: space-around;
      margin: 0.5em;
@@ -16,6 +24,14 @@ body {
      background-size: cover;
      border-radius: 4px;
 }
+.images .image_centrale .bg_centrale {
+     background: black;
+     height: 100%;
+     width: 100%;
+     z-index: 100;
+     opacity: 0.4;
+     
+}
 .images .image_droite {
      width: 20%;
      display: flex;
@@ -24,7 +40,7 @@ body {
      
 }
 .images .image_droite .image_droite_1 {
-     height: 37vh;
+     height: 40vh;
      background-image: url("../../Images/recette3.jpg");
      width: 100%;
      background-position: center;
@@ -43,7 +59,7 @@ body {
      background-size: cover ;
      border-radius: 4px;
      padding: 1em;
-     height: 37vh;
+     height: 40vh;
      border: 1px solid #03AA00;
 }
 .images .image_gauche {
@@ -70,6 +86,8 @@ body {
      padding: 0.6em 1.2em;
      border-radius: 30px;
      font-weight: 500;
+     cursor: pointer;
+     border: none;
      text-align: center;
 }
 
@@ -80,7 +98,9 @@ body {
      padding: 0.6em 1.2em;
      font-weight: 500;
      border-radius: 30px;
+     border: none;
      font-size: 1.2em;
+     cursor: pointer;
 }
 .images .image_gauche p {
      text-transform: uppercase;
@@ -145,6 +165,7 @@ body {
      /* border-radius: 5px 0 0 5px; */
      outline-color: #03AA00;
      padding: 0 0 0 1rem;
+     border-radius: 40px;
      background: #F6F6F6;
      border: 1px solid #03AA00;
 }
@@ -171,21 +192,23 @@ body {
 }
 .listes_categories .button {
      text-decoration: none;
-     padding: 0.5em 1em;
+     padding: 0.4em 1em;
      font-size: 1.1em;
-     border: 1px solid #F6F6F6;
+     border: 1px solid black;
      color: black;
-     border-radius: 3px;
-     transition: 1s;
+     border-radius: 20px;
+     background: white;
+     transition: .1s;
 }
 .listes_categories .button:hover {
-     transform: scale(1.1);
-     background: orange;
+     transform: scale(1);
+     background: #03AA00;
      color: wheat;
-     transition: 1s;
+     transition: .1s;
+     border: none;
 }
 .listes_categories .active {
-     background: orange;
+     background: #03AA00;
      color: white;
      border: none;
 }

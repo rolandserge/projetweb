@@ -66,15 +66,17 @@ const DetailTableau = () => {
      
                     <div className='containers_div'>
                          <div className='div_nom_cat'>
-                              <p>{isloading ? '' : tableau.categorie.Name_category} {isloading ? '' : tableau.Couleur_Tableau} <span>:</span>  {isloading ? '' : tableau.categorie.Description_category}</p>
+                              <p>{isloading ? '' : tableau.Name_Tableau}</p>
                          </div>
                          <div className='Tableau_element'>          
                               <div className='Tableau_image'>
-                              <ReactImageMagnify {...{
+                              <ReactImageMagnify className='img'{...{
                                    smallImage: {
                                         alt: 'Wristwatch by Ted Baker London',
-                                        isFluidWidth: true,
+                                        // isFluidWidth: true,
                                         src: `http://127.0.0.1:8000/${tableau.Image_Tableau}`,
+                                        height: 350,
+                                        width: 400,
                                    },
                                    largeImage: {
                                         src: `http://127.0.0.1:8000/${tableau.Image_Tableau }`,
@@ -82,17 +84,15 @@ const DetailTableau = () => {
                                         height: 1000
                                    },
                                    enlargedImageContainerDimensions: {
-                                        width: '150%',
-                                        height: '150%'
+                                        width: '100%',
+                                        height: '100%'
                                     }
                               }} />
                                    {/* {isloading ? '' : <img src={`http://127.0.0.1:8000/${tableau.Image_Tableau}`} alt="" /> } */}
                               </div>
                               <div className='Tableau_infos'>
                                    <div>
-                                        <h3>{isloading ? '' : tableau.Name_Tableau}</h3>
-                                   </div>
-                                   <div>
+                                        <h3>Description</h3>
                                         <p className='description_p'>
                                              {isloading ? '' : tableau.Description_Tableau}
                                         </p>

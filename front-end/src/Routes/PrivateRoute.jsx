@@ -3,12 +3,14 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from "axios";
 import { Navigate, Outlet} from 'react-router-dom';
+import Login from '../Pages/Auth/Login';
 // import swal from 'sweetalert';
 
 const PrivateRoute = () => {
 
      const [auth, setAuth] = useState(false)
      const [au, setAu] = useState()
+     const [login, setLogin] = useState(false)
 
      useEffect(() => {
 
@@ -61,7 +63,7 @@ const PrivateRoute = () => {
      } else if (au == 401 && !auth) {
          
      //     result = auth ? <Outlet /> : <Navigate to="/connexion" /> 
-          result = <Navigate to="/login" />
+          result = <Login modal={setLogin} />
            
                
           

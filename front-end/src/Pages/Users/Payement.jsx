@@ -7,6 +7,7 @@ import "../../Styles/User/Payement.css"
 import {clearCard } from '../../Redux/SystemPanier';
 import moment from 'moment';
 import "moment/locale/fr"
+import Login from '../Auth/Login';
 
 const Payement = () => {
 
@@ -14,6 +15,7 @@ const Payement = () => {
 
      const dispatch = useDispatch()
      const navigate = useNavigate()
+     const [login, setLogin] = useState(true)
      
      var date = new Date() //la date d'aujourdui
      var surlendemain = date.setDate(date.getDate() + 2) //la date du surlendemain
@@ -23,12 +25,9 @@ const Payement = () => {
      useEffect(() => {
           
           if(cards.length  === 0 && localStorage.getItem('auth_token')) {
+          
+               navigate("/")
 
-               navigate('/')
-
-          } else if(cards.length === 0 && !localStorage.getItem('auth_token')) {
-
-               navigate('/login')
           }
 
      }, [])
@@ -120,6 +119,7 @@ const Payement = () => {
      return (
           <div>
                <Navbar />
+               {/* { auth ? <Login open={login} modal={() => setLogin(false)} /> : ""} */}
               <div className='form_commande'>
                     <form action="" onSubmit={orders}>
                          <div className='titre_livraison'>

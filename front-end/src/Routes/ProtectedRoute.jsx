@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { Navigate, Outlet} from 'react-router-dom';
+import Login from '../Pages/Auth/Login';
 
 const ProtectedRoute = () => {
 
      const [auth, setAuth] = useState(true)
+     const [login, setLogin] = useState(true)
      // const Navigate = useNavigate()
      useEffect(() => {
 
@@ -19,7 +21,7 @@ const ProtectedRoute = () => {
          }
          })
 
-      return auth ? <Outlet /> : <Navigate to="/login"/>
+      return auth ? <Outlet /> : <Login modal={setLogin} />
 };
 
 export default ProtectedRoute;

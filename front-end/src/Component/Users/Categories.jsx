@@ -1,36 +1,38 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
 import Card from './Card';
 
 const Categories = () => {
-
-     const categorie = useParams()
+ 
+     const [categories, setCategories] = useState([])
      const [produits, setProduits] = useState([])
-    
-     // const [categories, setCategories] = useState([])
-     // const [search, setSearch] = useState("")
+     const [filters, setFilter] = useState([])
+     const [value, setValue] = useState()
+     const [loadings, setLoadings] = useState(true)
+     const [active, setActive] = useState(true)
+
+     const [search, setSearch] = useState("")
+
+     var keys = ['Name_Tableau','categorie.Namecategory', 'Prix_Tableau']
+     
+     const recherche = (prod) => {
+          return prod.filter((produit) => keys.some((key) => String(produit[key]).toLowerCase().includes(search.toLowerCase())))
+          // return prod.filter( produit => Object.keys(produit).some( keys => String(produit[keys]).toLowerCase().includes(search.toLowerCase())))
+     }
+
      useEffect(() => {
 
-          const Produits = async() => {
+          const Categories = async() => {
 
                try {
-                   
-                   const response = await axios.get(`/api/user/${categorie.categorie}`);
+                   const response = await axios.get("/api/user/get-product");
                  
                     if(response.data.status === 200) {
 
-                         setProduits(response.data.produits)
-                         // setAllproduct(response.data.allproducts)
-
-                    } else if(response.data.status === 400) {
-
-                         console.log(response.data.message)
-
-                    } else if (response.data.status === 404) {
-
-                         console.log(response.data.message)
-                        
+                         setProduits(response.data.tableaux)
+                         setFilter(response.data.tableaux)
+                         setCategories(response.data.categories)
+                         setLoadings(false)
                     }
                } catch (error) {
 
@@ -38,37 +40,67 @@ const Categories = () => {
                }
           }
                
-        Produits()
-     }, [categorie])
+        Categories()
+     }, [])
+      
+     const changetat = (index) => {
 
-     
-  
+          if(index ==  value) {
+               return "button active"
+          }    
+          else {
+               return "button"
+          }
+     }
+     const filterdata = (index) => {
+          setValue(index)
+          setActive(false)
+          if(index == -1) {
+               const filter = produits.filter((x) => x.id != index)
+               setFilter(filter)
+          } else {
+               const filter = produits.filter((x) => x.categorie_id === index)
+               setFilter(filter)
+          }
+     }
+     function Loading () {
+          return <h1>Loading ...</h1>
+     }
      return (
           <>
-          
-          <div className='cards'>
-               {
+               <div className='searchbar'>
+                    <div className='search'>
+                         <input type="search" onChange={(event) => setSearch(event.target.value)} placeholder='Rechercher des tableaux par leur noms' name="search" />
+                    </div>
+               </div>
+          {
+               loadings ? <Loading /> : 
+               <>
+                    <div className="listes_categories">
+                    <>
+                         {/* <Link to="/" className={ location.pathname === `/` ? 'button active' : "button"}>Tout</Link> */}
+                         <button onClick={() => filterdata(-1)}  className={active ? "button active" : changetat(-1)}>Tout</button>
 
-                         // var key = ["Name_Tableau, categorie."]
-                         // produits.filter((produit) => {
-
-                         //      if(search === "") {
-                         //           return produit
-                         //      } else if(produit.Name_Tableau.toLowerCase().includes(search.toLowerCase())) {
-                         //           if(produit.Name_Tableau === 0) {
-                         //                return "Aucun tableau est associé a ce nom"
-                         //           }
-                         //           return produit
-                         //      }
-                         // })
-                         // .map((produit, index) => {
-                         //      return (
-                              //           )
-                    //      })
-                    // console.log(produits)
-                    }
-                              <Card produits={produits} />
-          </div>
+                    </>
+                         {
+                              categories.map((categorie, index) => {
+                                   return (
+                                        // <Link key={index}  className={ location.pathname === `/categories/${categorie.Name_category}` ? 'button active' : "button"} to={`/categories/${categorie.Name_category}`}>{categorie.Name_category}</Link>
+                                        <button key={index} onClick={() => filterdata(categorie.id)}  className={changetat(categorie.id)}>{categorie.Name_category}</button>
+                                   )
+                              })
+                         }
+                         
+                    </div>
+                    <>   
+                         {
+                              search ? 
+                              <Card produits={recherche(produits)} /> :
+                              <Card produits={filters} />
+                         }
+                    </>
+               </>
+          }
           </>
      );
 };

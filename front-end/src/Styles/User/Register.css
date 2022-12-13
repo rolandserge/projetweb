@@ -8,17 +8,36 @@
      display: flex;
      justify-content: center;
      align-items: center;
+     background: rgba(0, 0, 0, 0.6);
+     position: fixed;
+     top: 0;
+     z-index: 1;
+     left: 0;
+     width: 100%;
+     height: 100%;
 }
 .fonds .formulaires {
      background: #C2FFC0;
-     width: 40%;
+     width: 30%;
      height: 60vh;
      border-radius: 5px;
      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
+.fonds .entete {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     height: 10vh;
+}.fonds .entete button {
+     background: none;
+     font-size: 1.5em;
+     cursor: pointer;
+     border: none;
+}
+.fonds .entete h2 {
+     margin: 0;
+}
 .fonds .formulaire form {
-     /* background: red; */
-     /* width: 60%; */
      display: flex;
      margin-top: 1rem;
      justify-content: space-around;
@@ -59,6 +78,8 @@ h2 {
      color: black;
      font-size: 1.3rem;
      float: right;
-     /* background: red; */
+     border: none;
+     background: none;
+     cursor: pointer;
      margin: 0.5rem 2.2rem 0 0;
 }
